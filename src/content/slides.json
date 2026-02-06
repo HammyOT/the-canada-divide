@@ -1,0 +1,184 @@
+{
+  "slides": [
+    {
+      "id": "hook",
+      "title": "A Different Canada, By Age",
+      "statLabel": "Key affordability shift",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "Many Canadians feel like the deal changed: the same work doesn't buy the same future.",
+      "question": "If the country is richer, why does it feel harder?",
+      "backgroundType": "gradient",
+      "backgroundImage": null,
+      "theme": "noise"
+    },
+    {
+      "id": "housing",
+      "title": "Housing Split the Generations",
+      "statLabel": "Home prices ↑ vs incomes ↑",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "When shelter becomes a wealth engine, outcomes start depending on when you entered the market.",
+      "question": "Did timing become destiny?",
+      "backgroundType": "image",
+      "backgroundImage": "/images/housing.jpg",
+      "theme": "overlay"
+    },
+    {
+      "id": "rent",
+      "title": "Rent Took the Slack",
+      "statLabel": "Rent-to-income ratio",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "Higher rent leaves less room for saving, schooling, and starting a family.",
+      "question": "What does 'adult life' cost now?",
+      "backgroundType": "gradient",
+      "backgroundImage": null,
+      "theme": "lines"
+    },
+    {
+      "id": "wages",
+      "title": "Pay Didn't Keep Up",
+      "statLabel": "CPI ↑ vs wages ↑",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "Even small gaps compound: essentials rise, but paychecks lag.",
+      "question": "Is this a temporary spike—or the new baseline?",
+      "backgroundType": "image",
+      "backgroundImage": "/images/grocery.jpg",
+      "theme": "overlay"
+    },
+    {
+      "id": "education",
+      "title": "The Starting Line Moved",
+      "statLabel": "Tuition/debt levels",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "For many, adulthood begins with debt and delayed milestones.",
+      "question": "What happens when the 'first step' costs more?",
+      "backgroundType": "gradient",
+      "backgroundImage": null,
+      "theme": "graduation"
+    },
+    {
+      "id": "policy",
+      "title": "Policy Created Feedback Loops",
+      "statLabel": "Ownership/asset gains",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "Once a policy creates winners, those winners gain influence—making the system harder to change.",
+      "question": "Can a policy ever truly be reversed?",
+      "backgroundType": "gradient",
+      "backgroundImage": null,
+      "theme": "timeline"
+    },
+    {
+      "id": "governance",
+      "title": "Power Is Split, So Is Blame",
+      "statLabel": "Supply/permits/spending split",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "Housing and affordability sit across federal, provincial, and municipal decisions—often misaligned.",
+      "question": "If responsibility is shared, is anyone accountable?",
+      "backgroundType": "gradient",
+      "backgroundImage": null,
+      "theme": "layers"
+    },
+    {
+      "id": "lived-reality",
+      "title": "People Feel the Trade-offs",
+      "statLabel": "Summary statistic",
+      "statValue": "TBD",
+      "statNote": "PLACEHOLDER — replace with real StatCan/CMHC data",
+      "body": "There are fixes—but each has costs, politics, and unintended consequences.",
+      "question": "What would you trade to make it fairer?",
+      "backgroundType": "image",
+      "backgroundImage": "/images/people.jpg",
+      "theme": "overlay"
+    }
+  ],
+  "tableOfContents": [
+    { "id": "hook", "label": "The Divide" },
+    { "id": "housing", "label": "Housing" },
+    { "id": "rent", "label": "Rent" },
+    { "id": "wages", "label": "Wages" },
+    { "id": "education", "label": "Education" },
+    { "id": "policy", "label": "Policy" },
+    { "id": "governance", "label": "Governance" },
+    { "id": "lived-reality", "label": "Reality" },
+    { "id": "quotes", "label": "Voices" },
+    { "id": "data-playground", "label": "Data" },
+    { "id": "policy-options", "label": "Options" }
+  ],
+  "quotes": [
+    {
+      "id": "genz-1",
+      "text": "PLACEHOLDER QUOTE 1 — I graduated into a world where my parents' advice doesn't apply anymore.",
+      "generation": "Gen Z",
+      "ageRange": "18–25",
+      "isPlaceholder": true
+    },
+    {
+      "id": "genz-2",
+      "text": "PLACEHOLDER QUOTE 2 — Saving for a down payment feels like filling a bathtub with a teaspoon.",
+      "generation": "Gen Z",
+      "ageRange": "18–25",
+      "isPlaceholder": true
+    },
+    {
+      "id": "mid-1",
+      "text": "PLACEHOLDER QUOTE 3 — I got in just in time, but I worry about my kids constantly.",
+      "generation": "Mid-career",
+      "ageRange": "35–50",
+      "isPlaceholder": true
+    },
+    {
+      "id": "mid-2",
+      "text": "PLACEHOLDER QUOTE 4 — The ladder I climbed has had its lower rungs removed.",
+      "generation": "Mid-career",
+      "ageRange": "35–50",
+      "isPlaceholder": true
+    },
+    {
+      "id": "older-1",
+      "text": "PLACEHOLDER QUOTE 5 — We didn't realize we were lucky until we saw what happened to the next generation.",
+      "generation": "Older generation",
+      "ageRange": "60+",
+      "isPlaceholder": true
+    },
+    {
+      "id": "older-2",
+      "text": "PLACEHOLDER QUOTE 6 — The rules changed, and the young are paying the price.",
+      "generation": "Older generation",
+      "ageRange": "60+",
+      "isPlaceholder": true
+    }
+  ],
+  "ethicsNote": "Quotes used with consent; anonymity available upon request.",
+  "policyOptions": [
+    {
+      "id": "supply",
+      "title": "Increase Housing Supply",
+      "description": "Build more homes across all types—market, affordable, social housing.",
+      "tradeoff": "Requires infrastructure investment and faces local pushback (NIMBYism)."
+    },
+    {
+      "id": "tax-reform",
+      "title": "Tax & Asset Reforms",
+      "description": "Address speculation, foreign ownership, and capital gains exemptions.",
+      "tradeoff": "Political backlash from existing homeowners and investors."
+    },
+    {
+      "id": "income-supports",
+      "title": "Income Supports",
+      "description": "Expand rent assistance, housing benefits, and wage subsidies.",
+      "tradeoff": "High fiscal cost and debates over targeting effectiveness."
+    },
+    {
+      "id": "labour-market",
+      "title": "Labour Market Measures",
+      "description": "Raise minimum wages, strengthen worker protections, support unions.",
+      "tradeoff": "Concerns about employer costs and potential inflation."
+    }
+  ]
+}
