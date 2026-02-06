@@ -5,58 +5,59 @@
 /* Generational Inequality - Dark Cinematic Design System */
 /* Use a readable newspaper-like serif similar to NYT */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 
 @layer base {
   :root {
     /* Core palette - dark newsroom cinematic */
     --background: 222 47% 5%;
     --foreground: 226 100% 98%;
-    
+
     --card: 222 47% 8%;
     --card-foreground: 226 100% 98%;
-    
+
     --popover: 222 47% 8%;
     --popover-foreground: 226 100% 98%;
-    
+
     /* Primary - teal accent */
-    --primary: 168 84% 64%;
+    --primary: 215 20.2247% 65.098%;
     --primary-foreground: 222 47% 5%;
-    
+
     /* Secondary - muted slate */
     --secondary: 215 25% 27%;
     --secondary-foreground: 226 100% 98%;
-    
+
     /* Muted tones */
     --muted: 215 20% 20%;
     --muted-foreground: 215 20% 65%;
-    
+
     /* Accent matches primary for consistency */
-    --accent: 168 84% 64%;
+    --accent: 0 90.604% 70.7843%;
     --accent-foreground: 222 47% 5%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 226 100% 98%;
-    
+
     --border: 215 25% 20%;
     --input: 215 25% 20%;
     --ring: 168 84% 64%;
-    
+
     --radius: 0.5rem;
-    
+
     /* Chart colors */
     --chart-1: 168 84% 64%;
     --chart-2: 200 70% 50%;
     --chart-3: 280 65% 60%;
     --chart-4: 30 80% 55%;
     --chart-5: 340 75% 55%;
-    
+
     /* Custom semantic tokens */
     --stat-highlight: 168 84% 64%;
     --overlay-dark: 222 47% 5% / 0.85;
     --gradient-start: 222 47% 5%;
     --gradient-mid: 222 47% 8%;
     --gradient-end: 215 25% 12%;
-    
+
     /* Spacing tokens */
     --section-padding: 3rem;
     --content-max-width: 72rem;
@@ -81,7 +82,7 @@
     html {
       scroll-behavior: auto;
     }
-    
+
     *,
     *::before,
     *::after {
@@ -97,7 +98,7 @@
     font-feature-settings: 'cv11', 'ss01';
     line-height: 1.6;
   }
-  
+
   /* Typography scale */
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
@@ -115,7 +116,7 @@
       hsl(var(--gradient-end)) 100%
     );
   }
-  
+
   .slide-gradient-animated {
     background: linear-gradient(
       135deg,
@@ -126,12 +127,12 @@
     background-size: 200% 200%;
     animation: gradient-shift 15s ease infinite;
   }
-  
+
   @keyframes gradient-shift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
   }
-  
+
   /* Image overlay for text protection */
   .image-overlay {
     background: linear-gradient(
@@ -141,7 +142,7 @@
       hsl(var(--overlay-dark)) 100%
     );
   }
-  
+
   /* Noise texture overlay */
   .noise-overlay::before {
     content: '';
@@ -152,59 +153,59 @@
     pointer-events: none;
     z-index: 1;
   }
-  
+
   /* Stat highlight styling */
   .stat-value {
     @apply text-primary font-black;
     text-shadow: 0 0 40px hsl(var(--primary) / 0.3);
   }
-  
+
   .stat-label {
     @apply text-muted-foreground uppercase tracking-widest text-sm font-medium;
   }
-  
+
   /* Placeholder badge */
   .placeholder-badge {
     @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full;
     @apply bg-accent/10 text-accent border border-accent/20;
   }
-  
+
   /* Quote card styling */
   .quote-card {
     @apply relative p-6 rounded-lg border border-border/50;
     @apply bg-card/50 backdrop-blur-sm;
   }
-  
+
   .quote-card::before {
     content: '"';
     @apply absolute -top-2 left-4 text-6xl text-primary/20 font-serif;
   }
-  
+
   /* Progress indicator */
   .progress-dot {
     @apply w-2 h-2 rounded-full transition-all duration-300;
     @apply bg-muted-foreground/30;
   }
-  
+
   .progress-dot.active {
     @apply bg-primary scale-150;
   }
-  
+
   /* Focus states for accessibility */
   .focus-ring {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
-  
+
   /* Touch-friendly targets */
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
-  
+
   /* Section divider */
   .section-divider {
     @apply relative py-24 flex items-center justify-center;
   }
-  
+
   .section-divider::before {
     content: '';
     @apply absolute left-1/2 -translate-x-1/2 w-px h-full;
@@ -215,13 +216,13 @@
       transparent
     );
   }
-  
+
   /* Chart container */
   .chart-container {
     @apply relative p-6 rounded-xl border border-border/50;
     @apply bg-card/30 backdrop-blur-sm;
   }
-  
+
   /* Policy card */
   .policy-card {
     @apply relative p-6 rounded-xl border border-border/50;
@@ -236,25 +237,25 @@
   .stagger-2 { animation-delay: 200ms; }
   .stagger-3 { animation-delay: 400ms; }
   .stagger-4 { animation-delay: 600ms; }
-  
+
   /* Text shadow for emphasis */
   .text-glow {
     text-shadow: 0 0 20px hsl(var(--primary) / 0.4);
   }
-  
+
   /* Scrollbar styling */
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-track {
     @apply bg-muted/20 rounded-full;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-muted-foreground/30 rounded-full;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-muted-foreground/50;
   }
