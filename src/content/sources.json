@@ -1,0 +1,116 @@
+{
+  "_disclaimer": "PLACEHOLDER SOURCES — Replace all URLs and table numbers with actual StatCan/CMHC/Bank of Canada references before publication.",
+  
+  "sources": [
+    {
+      "id": "statcan-housing",
+      "label": "Statistics Canada — New Housing Price Index",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER: Table XX-XX-XXXX",
+      "note": "Replace with final link and table number",
+      "category": "Housing",
+      "isPlaceholder": true
+    },
+    {
+      "id": "cmhc-rental",
+      "label": "CMHC — Rental Market Report",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER",
+      "note": "Replace with final link to annual rental market survey",
+      "category": "Housing",
+      "isPlaceholder": true
+    },
+    {
+      "id": "statcan-cpi",
+      "label": "Statistics Canada — Consumer Price Index",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER: Table 18-10-0004-01",
+      "note": "Replace with final link and confirm table number",
+      "category": "Prices",
+      "isPlaceholder": true
+    },
+    {
+      "id": "statcan-wages",
+      "label": "Statistics Canada — Average Weekly Earnings",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER: Table 14-10-0223-01",
+      "note": "Replace with final link and confirm table number",
+      "category": "Wages",
+      "isPlaceholder": true
+    },
+    {
+      "id": "statcan-tuition",
+      "label": "Statistics Canada — Tuition Fees",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER: Table 37-10-0003-01",
+      "note": "Replace with final link and confirm table number",
+      "category": "Education",
+      "isPlaceholder": true
+    },
+    {
+      "id": "statcan-debt",
+      "label": "Statistics Canada — Student Debt Survey",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER",
+      "note": "Replace with final link to National Graduates Survey",
+      "category": "Education",
+      "isPlaceholder": true
+    },
+    {
+      "id": "boc-rates",
+      "label": "Bank of Canada — Policy Interest Rate",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER",
+      "note": "Replace with final link to historical rate data",
+      "category": "Policy",
+      "isPlaceholder": true
+    },
+    {
+      "id": "statcan-wealth",
+      "label": "Statistics Canada — Survey of Financial Security",
+      "url": "#",
+      "tableNumber": "PLACEHOLDER: Table 11-10-0016-01",
+      "note": "Replace with final link and confirm table number",
+      "category": "Wealth",
+      "isPlaceholder": true
+    }
+  ],
+  
+  "methodology": {
+    "title": "How to Read This Data",
+    "description": "All indices are normalized to 2005 = 100 for comparability. This allows us to see relative change over time, but does not represent absolute values.",
+    "notes": [
+      "Housing affordability index combines home prices and mortgage rates against median incomes.",
+      "CPI figures use the all-items consumer price index for Canada.",
+      "Wage data represents average hourly wages for all employees.",
+      "Education costs include tuition only; total cost of attendance is higher.",
+      "Regional data may use different methodologies; compare with caution."
+    ]
+  },
+  
+  "limitations": {
+    "title": "Data Limitations",
+    "items": [
+      {
+        "issue": "Cohort Definitions",
+        "detail": "Generational boundaries vary by source. We use commonly accepted ranges but acknowledge overlap and variation."
+      },
+      {
+        "issue": "Geographic Aggregation",
+        "detail": "National averages mask significant regional variation. Urban/rural and provincial differences are substantial."
+      },
+      {
+        "issue": "Time Comparability",
+        "detail": "Survey methodologies change over time. Long-term trends should be interpreted with caution."
+      },
+      {
+        "issue": "Wealth vs Income",
+        "detail": "Wealth (accumulated assets) and income (annual earnings) tell different stories. Both matter."
+      },
+      {
+        "issue": "Inflation Adjustment",
+        "detail": "Real vs nominal values can significantly change interpretation. We note when values are inflation-adjusted."
+      }
+    ]
+  }
+}

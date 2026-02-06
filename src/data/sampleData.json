@@ -1,0 +1,111 @@
+{
+  "_disclaimer": "PLACEHOLDER DATA — This is sample data for demonstration purposes only. Replace with real StatCan/CMHC/Bank of Canada data before publication.",
+  
+  "housingAffordability": [
+    { "year": 2005, "index": 100, "label": "2005 (baseline)" },
+    { "year": 2006, "index": 105, "label": "2006" },
+    { "year": 2007, "index": 112, "label": "2007" },
+    { "year": 2008, "index": 118, "label": "2008" },
+    { "year": 2009, "index": 108, "label": "2009" },
+    { "year": 2010, "index": 115, "label": "2010" },
+    { "year": 2011, "index": 122, "label": "2011" },
+    { "year": 2012, "index": 128, "label": "2012" },
+    { "year": 2013, "index": 135, "label": "2013" },
+    { "year": 2014, "index": 142, "label": "2014" },
+    { "year": 2015, "index": 155, "label": "2015" },
+    { "year": 2016, "index": 175, "label": "2016" },
+    { "year": 2017, "index": 195, "label": "2017" },
+    { "year": 2018, "index": 205, "label": "2018" },
+    { "year": 2019, "index": 210, "label": "2019" },
+    { "year": 2020, "index": 225, "label": "2020" },
+    { "year": 2021, "index": 275, "label": "2021" },
+    { "year": 2022, "index": 295, "label": "2022" },
+    { "year": 2023, "index": 285, "label": "2023" },
+    { "year": 2024, "index": 290, "label": "2024" }
+  ],
+  
+  "wagesVsCpi": [
+    { "year": 2005, "wageIndex": 100, "cpiIndex": 100 },
+    { "year": 2006, "wageIndex": 102, "cpiIndex": 102 },
+    { "year": 2007, "wageIndex": 104, "cpiIndex": 104 },
+    { "year": 2008, "wageIndex": 106, "cpiIndex": 107 },
+    { "year": 2009, "wageIndex": 107, "cpiIndex": 108 },
+    { "year": 2010, "wageIndex": 109, "cpiIndex": 110 },
+    { "year": 2011, "wageIndex": 111, "cpiIndex": 113 },
+    { "year": 2012, "wageIndex": 113, "cpiIndex": 115 },
+    { "year": 2013, "wageIndex": 115, "cpiIndex": 117 },
+    { "year": 2014, "wageIndex": 117, "cpiIndex": 120 },
+    { "year": 2015, "wageIndex": 119, "cpiIndex": 122 },
+    { "year": 2016, "wageIndex": 121, "cpiIndex": 124 },
+    { "year": 2017, "wageIndex": 123, "cpiIndex": 126 },
+    { "year": 2018, "wageIndex": 126, "cpiIndex": 129 },
+    { "year": 2019, "wageIndex": 129, "cpiIndex": 132 },
+    { "year": 2020, "wageIndex": 131, "cpiIndex": 134 },
+    { "year": 2021, "wageIndex": 134, "cpiIndex": 139 },
+    { "year": 2022, "wageIndex": 138, "cpiIndex": 148 },
+    { "year": 2023, "wageIndex": 143, "cpiIndex": 154 },
+    { "year": 2024, "wageIndex": 148, "cpiIndex": 158 }
+  ],
+  
+  "educationCosts": [
+    { "year": 2005, "tuitionIndex": 100, "debtIndex": 100 },
+    { "year": 2006, "tuitionIndex": 104, "debtIndex": 103 },
+    { "year": 2007, "tuitionIndex": 108, "debtIndex": 107 },
+    { "year": 2008, "tuitionIndex": 112, "debtIndex": 112 },
+    { "year": 2009, "tuitionIndex": 116, "debtIndex": 118 },
+    { "year": 2010, "tuitionIndex": 121, "debtIndex": 125 },
+    { "year": 2011, "tuitionIndex": 126, "debtIndex": 132 },
+    { "year": 2012, "tuitionIndex": 132, "debtIndex": 140 },
+    { "year": 2013, "tuitionIndex": 138, "debtIndex": 148 },
+    { "year": 2014, "tuitionIndex": 144, "debtIndex": 156 },
+    { "year": 2015, "tuitionIndex": 150, "debtIndex": 165 },
+    { "year": 2016, "tuitionIndex": 156, "debtIndex": 174 },
+    { "year": 2017, "tuitionIndex": 162, "debtIndex": 183 },
+    { "year": 2018, "tuitionIndex": 168, "debtIndex": 192 },
+    { "year": 2019, "tuitionIndex": 174, "debtIndex": 201 },
+    { "year": 2020, "tuitionIndex": 178, "debtIndex": 208 },
+    { "year": 2021, "tuitionIndex": 182, "debtIndex": 215 },
+    { "year": 2022, "tuitionIndex": 188, "debtIndex": 225 },
+    { "year": 2023, "tuitionIndex": 195, "debtIndex": 235 },
+    { "year": 2024, "tuitionIndex": 202, "debtIndex": 245 }
+  ],
+  
+  "rentBurden": [
+    { "year": 2005, "rentToIncome": 28 },
+    { "year": 2010, "rentToIncome": 31 },
+    { "year": 2015, "rentToIncome": 35 },
+    { "year": 2020, "rentToIncome": 42 },
+    { "year": 2024, "rentToIncome": 48 }
+  ],
+  
+  "generationalWealth": [
+    { "generation": "Silent (1928-1945)", "medianWealth": 850000, "homeOwnership": 82 },
+    { "generation": "Boomers (1946-1964)", "medianWealth": 620000, "homeOwnership": 76 },
+    { "generation": "Gen X (1965-1980)", "medianWealth": 380000, "homeOwnership": 68 },
+    { "generation": "Millennials (1981-1996)", "medianWealth": 125000, "homeOwnership": 48 },
+    { "generation": "Gen Z (1997-2012)", "medianWealth": 15000, "homeOwnership": 12 }
+  ],
+  
+  "regionalComparison": {
+    "national": {
+      "label": "Canada (National)",
+      "housingIndex2024": 290,
+      "avgRent2024": 1850
+    },
+    "ontario": {
+      "label": "Ontario",
+      "housingIndex2024": 340,
+      "avgRent2024": 2250
+    },
+    "bc": {
+      "label": "British Columbia",
+      "housingIndex2024": 380,
+      "avgRent2024": 2400
+    },
+    "prairies": {
+      "label": "Prairies",
+      "housingIndex2024": 185,
+      "avgRent2024": 1450
+    }
+  }
+}
