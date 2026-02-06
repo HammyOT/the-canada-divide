@@ -129,7 +129,7 @@ export function SlideSection({
         </motion.div>
 
         {/* Title */}
-        <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-display font-black text-foreground mb-12 leading-tight font-serif">
+        <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-display font-black text-foreground mb-12 leading-tight font-sans">
           {slide.title}
         </motion.h2>
 
