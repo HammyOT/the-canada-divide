@@ -61,11 +61,13 @@
     /* Spacing tokens */
     --section-padding: 3rem;
     --content-max-width: 72rem;
+    --font-serif: Merriweather, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
   }
 
   .dark {
     --background: 222 47% 5%;
     --foreground: 226 100% 98%;
+    --font-serif: Merriweather, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
   }
 }
 
