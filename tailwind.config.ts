@@ -14,7 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        // Use a newspaper-like serif (Merriweather) as the site's primary font
+        sans: ['Merriweather', 'Georgia', "Times New Roman", 'serif'],
+        serif: ['Merriweather', 'Georgia', "Times New Roman", 'serif'],
       },
       fontSize: {
         'display': ['clamp(2.5rem, 8vw, 5rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],

@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 /* Generational Inequality - Dark Cinematic Design System */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* Use a readable newspaper-like serif similar to NYT */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
 
 @layer base {
   :root {
@@ -92,7 +93,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
     font-feature-settings: 'cv11', 'ss01';
     line-height: 1.6;
   }
