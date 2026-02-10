@@ -32,11 +32,11 @@ const tabs: Tab[] = [
 ];
 
 const CHART_COLORS = {
-  primary: 'hsl(168, 84%, 64%)',
-  secondary: 'hsl(200, 70%, 50%)',
-  tertiary: 'hsl(280, 65%, 60%)',
-  grid: 'hsl(215, 25%, 20%)',
-  text: 'hsl(215, 20%, 65%)',
+  primary: 'hsl(220, 20%, 10%)',
+  secondary: 'hsl(0, 65%, 48%)',
+  tertiary: 'hsl(220, 15%, 45%)',
+  grid: 'hsl(30, 15%, 82%)',
+  text: 'hsl(220, 10%, 40%)',
 };
 
 export function DataPlayground() {
@@ -50,7 +50,7 @@ export function DataPlayground() {
     if (chartRef.current) {
       try {
         const dataUrl = await toPng(chartRef.current, {
-          backgroundColor: '#0B1020',
+          backgroundColor: '#f5f0e8',
           pixelRatio: 2,
         });
         const link = document.createElement('a');
@@ -89,10 +89,10 @@ export function DataPlayground() {
               />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: 'hsl(222, 47%, 8%)',
-                  border: '1px solid hsl(215, 25%, 20%)',
-                  borderRadius: '8px',
-                  color: 'hsl(226, 100%, 98%)'
+                  backgroundColor: 'hsl(40, 25%, 93%)',
+                  border: '1px solid hsl(30, 15%, 82%)',
+                  borderRadius: '4px',
+                  color: 'hsl(220, 20%, 10%)'
                 }}
                 labelFormatter={(value) => `Year: ${value}`}
                 formatter={(value: number) => [`${value}`, 'Affordability Index']}
@@ -135,10 +135,10 @@ export function DataPlayground() {
               />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: 'hsl(222, 47%, 8%)',
-                  border: '1px solid hsl(215, 25%, 20%)',
-                  borderRadius: '8px',
-                  color: 'hsl(226, 100%, 98%)'
+                  backgroundColor: 'hsl(40, 25%, 93%)',
+                  border: '1px solid hsl(30, 15%, 82%)',
+                  borderRadius: '4px',
+                  color: 'hsl(220, 20%, 10%)'
                 }}
                 labelFormatter={(value) => `Year: ${value}`}
               />
@@ -187,10 +187,10 @@ export function DataPlayground() {
               />
               <Tooltip 
                 contentStyle={{ 
-                  backgroundColor: 'hsl(222, 47%, 8%)',
-                  border: '1px solid hsl(215, 25%, 20%)',
-                  borderRadius: '8px',
-                  color: 'hsl(226, 100%, 98%)'
+                  backgroundColor: 'hsl(40, 25%, 93%)',
+                  border: '1px solid hsl(30, 15%, 82%)',
+                  borderRadius: '4px',
+                  color: 'hsl(220, 20%, 10%)'
                 }}
                 labelFormatter={(value) => `Year: ${value}`}
               />

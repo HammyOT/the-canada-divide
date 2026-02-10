@@ -9,64 +9,58 @@
 
 @layer base {
   :root {
-    /* Core palette - dark newsroom cinematic */
-    --background: 222 47% 5%;
-    --foreground: 226 100% 98%;
+    /* Core palette - light newspaper */
+    --background: 40 33% 96%;
+    --foreground: 220 20% 10%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 226 100% 98%;
+    --card: 40 25% 93%;
+    --card-foreground: 220 20% 10%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 226 100% 98%;
+    --popover: 40 25% 93%;
+    --popover-foreground: 220 20% 10%;
 
-    /* Primary - teal accent */
-    --primary: 0 0% 100%;
-    --primary-foreground: 222 47% 5%;
+    /* Primary - deep ink black */
+    --primary: 220 20% 10%;
+    --primary-foreground: 40 33% 96%;
 
-    /* Secondary - muted slate */
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 226 100% 98%;
+    /* Secondary - warm gray */
+    --secondary: 30 10% 82%;
+    --secondary-foreground: 220 20% 10%;
 
     /* Muted tones */
-    --muted: 215 20% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 30 10% 88%;
+    --muted-foreground: 220 10% 40%;
 
-    /* Accent matches primary for consistency */
-    --accent: 0 90.604% 70.7843%;
-    --accent-foreground: 222 47% 5%;
+    /* Accent - muted red for editorial highlights */
+    --accent: 0 65% 48%;
+    --accent-foreground: 40 33% 96%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 226 100% 98%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 40 33% 96%;
 
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 168 84% 64%;
+    --border: 30 15% 82%;
+    --input: 30 15% 82%;
+    --ring: 220 20% 10%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
     /* Chart colors */
-    --chart-1: 168 84% 64%;
-    --chart-2: 200 70% 50%;
-    --chart-3: 280 65% 60%;
-    --chart-4: 30 80% 55%;
-    --chart-5: 340 75% 55%;
+    --chart-1: 220 20% 10%;
+    --chart-2: 0 65% 48%;
+    --chart-3: 220 15% 45%;
+    --chart-4: 30 50% 45%;
+    --chart-5: 350 55% 50%;
 
     /* Custom semantic tokens */
-    --stat-highlight: 168 84% 64%;
-    --overlay-dark: 222 47% 5% / 0.85;
-    --gradient-start: 222 47% 5%;
-    --gradient-mid: 222 47% 8%;
-    --gradient-end: 215 25% 12%;
+    --stat-highlight: 0 65% 48%;
+    --overlay-dark: 220 20% 10% / 0.75;
+    --gradient-start: 40 33% 96%;
+    --gradient-mid: 40 25% 93%;
+    --gradient-end: 30 15% 88%;
 
     /* Spacing tokens */
     --section-padding: 3rem;
     --content-max-width: 72rem;
-    --font-serif: Merriweather, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
-  }
-
-  .dark {
-    --background: 222 47% 5%;
-    --foreground: 226 100% 98%;
     --font-serif: Merriweather, ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
   }
 }
@@ -140,7 +134,7 @@
     background: linear-gradient(
       to bottom,
       hsl(var(--overlay-dark)) 0%,
-      hsl(222 47% 5% / 0.6) 40%,
+      hsl(220 20% 10% / 0.5) 40%,
       hsl(var(--overlay-dark)) 100%
     );
   }
@@ -158,8 +152,8 @@
 
   /* Stat highlight styling */
   .stat-value {
-    @apply text-primary font-black;
-    text-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+    @apply font-black;
+    color: hsl(var(--stat-highlight));
   }
 
   .stat-label {
@@ -242,7 +236,7 @@
 
   /* Text shadow for emphasis */
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+    text-shadow: none;
   }
 
   /* Scrollbar styling */

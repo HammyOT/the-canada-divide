@@ -100,22 +100,18 @@ export function SlideSection({
       }
     }
   };
-  return <section ref={ref} id={slide.id} className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-labelledby={`slide-title-${slide.id}`}>
+  return <section ref={ref} id={slide.id} className="relative min-h-screen flex items-center justify-center overflow-hidden border-b border-border/50" aria-labelledby={`slide-title-${slide.id}`}>
       {/* Background */}
       <div className="absolute inset-0">
         {hasImage ? <>
-            {/* Image with fallback */}
-            <div className="absolute inset-0 bg-cover bg-center slide-gradient" style={{
+            <div className="absolute inset-0 bg-cover bg-center bg-background" style={{
           backgroundImage: `url(${slide.backgroundImage})`
         }} onError={e => {
-          // Fallback to gradient if image fails
           (e.target as HTMLDivElement).style.backgroundImage = 'none';
         }} />
-            {/* Dark overlay for text protection */}
             <div className="absolute inset-0 image-overlay" />
-          </> : <div className={`absolute inset-0 ${index === 0 ? 'slide-gradient-animated noise-overlay' : 'slide-gradient'}`} />}
+          </> : <div className={`absolute inset-0 bg-background ${index === 0 ? 'noise-overlay' : ''}`} />}
         
-        {/* Theme-specific decorations */}
         <ThemeDecoration theme={slide.theme} reducedMotion={reducedMotion} />
       </div>
 
