@@ -56,7 +56,7 @@ export function TableOfContents({ items, activeIndex, onNavigate }: TableOfConte
             className={cn(
               "absolute top-full left-0 mt-2 py-2 min-w-[200px]",
               "bg-card/95 backdrop-blur-md border border-border/50 rounded-lg",
-              "shadow-xl shadow-black/20"
+              "shadow-xl shadow-black/10"
             )}
             aria-label="Table of contents"
           >
