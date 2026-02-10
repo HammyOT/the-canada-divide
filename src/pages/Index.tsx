@@ -7,13 +7,39 @@ import { DataPlayground } from '@/components/DataPlayground';
 import { PolicyGrid } from '@/components/PolicyGrid';
 import { SourcesPanel } from '@/components/SourcesPanel';
 import { Footer } from '@/components/Footer';
+import { PhotoBreak } from '@/components/PhotoBreak';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import slidesDataRaw from '@/content/slides.json';
 
-// Cast the slides to ensure proper typing
+import photoHousing from '@/assets/photo-housing.jpg';
+import photoGroceries from '@/assets/photo-groceries.jpg';
+import photoCampus from '@/assets/photo-campus.jpg';
+
 const slidesData = {
   ...slidesDataRaw,
   slides: slidesDataRaw.slides as SlideData[],
+};
+
+// Photo breaks inserted after specific slide indices
+const photoBreaks: Record<number, { src: string; alt: string; caption: string; credit: string }> = {
+  1: {
+    src: photoHousing,
+    alt: 'Aerial view of suburban housing development stretching to the horizon',
+    caption: 'Suburban sprawl outside a major Canadian city. For many, homeownership now depends on when — not whether — you entered the market.',
+    credit: 'Photo: Placeholder',
+  },
+  3: {
+    src: photoGroceries,
+    alt: 'Grocery store aisle with price tags',
+    caption: 'The cost of essentials has outpaced wages for over a decade.',
+    credit: 'Photo: Placeholder',
+  },
+  4: {
+    src: photoCampus,
+    alt: 'University students walking across campus in autumn',
+    caption: 'For many graduates, adulthood begins with five figures of debt.',
+    credit: 'Photo: Placeholder',
+  },
 };
 
 const Index = () => {
@@ -28,7 +54,6 @@ const Index = () => {
 
   return (
     <main className="relative bg-background min-h-screen custom-scrollbar">
-      {/* Skip to content link for accessibility */}
       <a 
         href="#hook" 
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
@@ -36,14 +61,12 @@ const Index = () => {
         Skip to main content
       </a>
 
-      {/* Navigation */}
       <TableOfContents 
         items={slidesData.tableOfContents}
         activeIndex={activeSection}
         onNavigate={scrollToSection}
       />
       
-      {/* Progress indicators */}
       <ProgressIndicator
         sections={slidesData.tableOfContents}
         activeIndex={activeSection}
@@ -52,35 +75,33 @@ const Index = () => {
       />
       <MobileProgressBar progress={scrollProgress} />
 
-      {/* ACT 1: Narrative Slides */}
       <article aria-label="Act 1: The Narrative">
         {slidesData.slides.map((slide, index) => (
-          <SlideSection
-            key={slide.id}
-            slide={slide}
-            index={index}
-          />
+          <div key={slide.id}>
+            <SlideSection slide={slide} index={index} />
+            {photoBreaks[index] && (
+              <PhotoBreak
+                src={photoBreaks[index].src}
+                alt={photoBreaks[index].alt}
+                caption={photoBreaks[index].caption}
+                credit={photoBreaks[index].credit}
+              />
+            )}
+          </div>
         ))}
       </article>
 
-      {/* Quotes Section */}
       <QuotesSection 
         quotes={slidesData.quotes}
         ethicsNote={slidesData.ethicsNote}
       />
 
-      {/* ACT 2: Data Playground */}
       <article aria-label="Act 2: Explore the Data">
         <DataPlayground />
       </article>
 
-      {/* Policy Options */}
       <PolicyGrid options={slidesData.policyOptions} />
-
-      {/* Sources */}
       <SourcesPanel />
-
-      {/* Footer */}
       <Footer />
     </main>
   );
