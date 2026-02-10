@@ -28,16 +28,19 @@ export function QuotesSection({ quotes, ethicsNote }: QuotesSectionProps) {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: reducedMotion ? 0 : 20 },
-    visible: {
-      opacity: 1,
+    hidden: { opacity: 0, y: reducedMotion ? 0 : 30 },
+    visible: { 
+      opacity: 1, 
       y: 0,
       transition: { duration: reducedMotion ? 0.1 : 0.5 }
     }
   };
 
+  // Group quotes by generation
   const groupedQuotes = quotes.reduce((acc, quote) => {
-    if (!acc[quote.generation]) acc[quote.generation] = [];
+    if (!acc[quote.generation]) {
+      acc[quote.generation] = [];
+    }
     acc[quote.generation].push(quote);
     return acc;
   }, {} as Record<string, Quote[]>);
@@ -46,46 +49,50 @@ export function QuotesSection({ quotes, ethicsNote }: QuotesSectionProps) {
     <section
       ref={ref}
       id="quotes"
-      className="relative py-24 md:py-32 bg-background"
+      className="relative py-24 md:py-32 slide-gradient"
       aria-labelledby="quotes-title"
     >
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-3xl">
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-6xl">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: reducedMotion ? 0 : 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: reducedMotion ? 0 : 16 }}
+          initial={{ opacity: 0, y: reducedMotion ? 0 : 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: reducedMotion ? 0 : 20 }}
           transition={{ duration: reducedMotion ? 0.1 : 0.6 }}
-          className="mb-12"
+          className="text-center mb-16"
         >
-          <span className="kicker mb-3 block">Voices</span>
-          <div className="nyt-rule-thick mb-4" />
-          <h2 id="quotes-title" className="text-headline font-bold text-foreground mb-3 font-serif">
+          <span className="text-muted-foreground text-sm font-medium tracking-widest uppercase mb-4 block">
+            Voices
+          </span>
+          <h2 id="quotes-title" className="text-headline font-bold text-foreground mb-4">
             What Canadians Are Saying
           </h2>
-          <p className="text-muted-foreground font-serif">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Perspectives from different generations on economic opportunity.
           </p>
         </motion.div>
 
-        {/* Quotes */}
+        {/* Quotes grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
+          animate={isInView ? "visible" : "hidden"}
           className="space-y-12"
         >
           {Object.entries(groupedQuotes).map(([generation, genQuotes]) => (
             <div key={generation}>
-              <h3 className="kicker mb-4">
+              <h3 className="text-sm font-medium text-primary mb-4 uppercase tracking-widest">
                 {generation} ({genQuotes[0]?.ageRange})
               </h3>
-              <div className="nyt-rule mb-6" />
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6">
                 {genQuotes.map((quote) => (
-                  <motion.div key={quote.id} variants={cardVariants} className="quote-card">
+                  <motion.div
+                    key={quote.id}
+                    variants={cardVariants}
+                    className="quote-card"
+                  >
                     <blockquote className="relative z-10">
-                      <p className="text-lg text-foreground mb-3 leading-relaxed font-serif italic">
-                        "{quote.text}"
+                      <p className="text-lg text-foreground mb-4 leading-relaxed">
+                        {quote.text}
                       </p>
                       {quote.isPlaceholder && (
                         <span className="placeholder-badge">
@@ -109,7 +116,7 @@ export function QuotesSection({ quotes, ethicsNote }: QuotesSectionProps) {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: reducedMotion ? 0 : 0.8, duration: 0.4 }}
-          className="mt-12 text-sm text-muted-foreground italic font-serif border-t border-foreground/10 pt-4"
+          className="mt-12 text-center text-sm text-muted-foreground italic"
         >
           {ethicsNote}
         </motion.p>
