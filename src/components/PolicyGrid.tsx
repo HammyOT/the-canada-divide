@@ -26,91 +26,74 @@ export function PolicyGrid({ options }: PolicyGridProps) {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: reducedMotion ? 0 : 20 },
-    visible: { 
-      opacity: 1, 
+    hidden: { opacity: 0, y: reducedMotion ? 0 : 16 },
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: reducedMotion ? 0.1 : 0.4 }
     }
   };
 
   return (
-    <section
-      ref={ref}
-      id="policy-options"
-      className="relative py-24 md:py-32 slide-gradient"
-      aria-labelledby="policy-title"
-    >
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-6xl">
-        {/* Section header */}
+    <section ref={ref} id="policy-options" className="relative py-24 md:py-32 bg-background" aria-labelledby="policy-title">
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-3xl">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: reducedMotion ? 0 : 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: reducedMotion ? 0 : 20 }}
+          initial={{ opacity: 0, y: reducedMotion ? 0 : 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: reducedMotion ? 0 : 16 }}
           transition={{ duration: reducedMotion ? 0.1 : 0.6 }}
-          className="text-center mb-16"
+          className="mb-12"
         >
-          <span className="text-muted-foreground text-sm font-medium tracking-widest uppercase mb-4 block">
-            Looking Forward
-          </span>
-          <h2 id="policy-title" className="text-headline font-bold text-foreground mb-4">
+          <span className="kicker mb-3 block">Looking Forward</span>
+          <div className="nyt-rule-thick mb-4" />
+          <h2 id="policy-title" className="text-headline font-bold text-foreground mb-3 font-serif">
             Policy Options (With Trade-offs)
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground font-serif">
             Every solution has costs. Here are the main levers—and what they'd require.
           </p>
         </motion.div>
 
-        {/* Policy grid */}
+        {/* Policy list */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-2 gap-6"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="space-y-0 divide-y divide-foreground/10"
         >
           {options.map((option, index) => (
-            <motion.div
-              key={option.id}
-              variants={cardVariants}
-              className="policy-card group"
-            >
+            <motion.div key={option.id} variants={cardVariants} className="py-8 first:pt-0">
               <div className="flex items-start gap-4">
-                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg">
+                <span className="flex-shrink-0 text-2xl font-black text-foreground/20 font-serif leading-none mt-1">
                   {index + 1}
                 </span>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-foreground mb-2 font-serif">
                     {option.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-4 font-serif">
                     {option.description}
                   </p>
-                  <div className="flex items-start gap-2 p-3 rounded-lg bg-destructive/5 border border-destructive/10">
-                    <svg className="w-4 h-4 text-destructive/70 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground">Trade-off:</span> {option.tradeoff}
-                    </p>
-                  </div>
+                  <p className="text-sm text-muted-foreground font-serif border-l-2 border-accent/50 pl-4">
+                    <span className="font-semibold text-foreground">Trade-off:</span> {option.tradeoff}
+                  </p>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Closing paragraph */}
+        {/* Closing */}
         <motion.div
-          initial={{ opacity: 0, y: reducedMotion ? 0 : 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: reducedMotion ? 0 : 20 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: reducedMotion ? 0 : 0.5, duration: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-16 border-t-2 border-foreground pt-8"
         >
-          <div className="max-w-3xl mx-auto p-8 rounded-xl border border-border/50 bg-card/30">
-            <p className="text-lg text-foreground leading-relaxed">
-              This project shows how policy choices shape who benefits—and who pays. 
-              <span className="text-primary"> The question isn't whether change is possible, but what we're willing to trade for a fairer outcome.</span>
-            </p>
-          </div>
+          <p className="text-lg text-foreground leading-relaxed font-serif">
+            This project shows how policy choices shape who benefits—and who pays.{' '}
+            <em className="text-accent">The question isn't whether change is possible, but what we're willing to trade for a fairer outcome.</em>
+          </p>
         </motion.div>
       </div>
     </section>

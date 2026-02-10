@@ -105,28 +105,11 @@
 @layer components {
   /* Slide backgrounds */
   .slide-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--gradient-start)) 0%,
-      hsl(var(--gradient-mid)) 50%,
-      hsl(var(--gradient-end)) 100%
-    );
+    background: hsl(var(--background));
   }
 
   .slide-gradient-animated {
-    background: linear-gradient(
-      135deg,
-      hsl(var(--gradient-start)) 0%,
-      hsl(var(--gradient-mid)) 50%,
-      hsl(var(--gradient-end)) 100%
-    );
-    background-size: 200% 200%;
-    animation: gradient-shift 15s ease infinite;
-  }
-
-  @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    background: hsl(var(--background));
   }
 
   /* Image overlay for text protection */
@@ -145,7 +128,7 @@
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
+    opacity: 0.02;
     pointer-events: none;
     z-index: 1;
   }
@@ -162,19 +145,17 @@
 
   /* Placeholder badge */
   .placeholder-badge {
-    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full;
-    @apply bg-accent/10 text-accent border border-accent/20;
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium;
+    @apply text-muted-foreground border-b border-muted-foreground/30;
   }
 
-  /* Quote card styling */
+  /* Quote styling — thin left rule, no card */
   .quote-card {
-    @apply relative p-6 rounded-lg border border-border/50;
-    @apply bg-card/50 backdrop-blur-sm;
+    @apply relative pl-6 py-2 border-l-2 border-foreground/20;
   }
 
   .quote-card::before {
-    content: '"';
-    @apply absolute -top-2 left-4 text-6xl text-primary/20 font-serif;
+    content: none;
   }
 
   /* Progress indicator */
@@ -184,12 +165,12 @@
   }
 
   .progress-dot.active {
-    @apply bg-primary scale-150;
+    @apply bg-foreground scale-150;
   }
 
   /* Focus states for accessibility */
   .focus-ring {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
   /* Touch-friendly targets */
@@ -197,33 +178,33 @@
     @apply min-h-[44px] min-w-[44px];
   }
 
-  /* Section divider */
+  /* Section divider — thin horizontal rule */
   .section-divider {
-    @apply relative py-24 flex items-center justify-center;
+    @apply relative py-16 flex items-center justify-center;
   }
 
   .section-divider::before {
     content: '';
-    @apply absolute left-1/2 -translate-x-1/2 w-px h-full;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      hsl(var(--primary) / 0.5),
-      transparent
-    );
+    @apply absolute left-1/2 -translate-x-1/2 w-24 h-px bg-foreground/20;
   }
 
-  /* Chart container */
+  /* Chart container — no card, just border top */
   .chart-container {
-    @apply relative p-6 rounded-xl border border-border/50;
-    @apply bg-card/30 backdrop-blur-sm;
+    @apply relative py-6 border-t border-foreground/15;
   }
 
-  /* Policy card */
-  .policy-card {
-    @apply relative p-6 rounded-xl border border-border/50;
-    @apply bg-card/50 transition-all duration-300;
-    @apply hover:border-primary/30 hover:bg-card/70;
+  /* NYT-style thin rule */
+  .nyt-rule {
+    @apply border-t border-foreground/15;
+  }
+
+  .nyt-rule-thick {
+    @apply border-t-2 border-foreground;
+  }
+
+  /* Kicker / section label */
+  .kicker {
+    @apply text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium;
   }
 }
 
