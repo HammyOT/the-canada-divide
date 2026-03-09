@@ -104,22 +104,20 @@ export function SlideSection({
       {/* Content */}
       <motion.div className="container mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 max-w-3xl" variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
         {/* Title */}
-        {index === 0 ? (
-          <motion.h1 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-display font-black text-foreground mb-10 leading-none font-serif">
+        {index === 0 ?
+      <motion.h1 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-display font-black text-foreground mb-10 leading-none font-serif text-center">
             {slide.title}
-          </motion.h1>
-        ) : (
-          <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-3xl font-black text-foreground mb-8 leading-tight font-serif">
+          </motion.h1> :
+
+      <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-3xl font-black text-foreground mb-8 leading-tight font-serif">
             {slide.title}
           </motion.h2>
-        )}
+      }
 
         {/* Body text */}
-        <motion.div variants={itemVariants} className="text-body-lg text-muted-foreground mb-10 max-w-2xl font-serif leading-relaxed space-y-4">
-          {slide.body.split('\n').filter(Boolean).map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
-        </motion.div>
+        <motion.p variants={itemVariants} className="text-body-lg text-muted-foreground mb-10 max-w-2xl font-serif leading-relaxed">
+          {slide.body}
+        </motion.p>
 
         {/* Stat callout - inline block */}
         <motion.div variants={itemVariants} className="mb-10 pl-4 border-l-2 border-primary/40 space-y-1">
