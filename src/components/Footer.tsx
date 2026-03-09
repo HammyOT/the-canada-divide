@@ -58,7 +58,7 @@ export function Footer() {
               Built for educational purposes.  
             </p>
             <p className="text-xs text-muted-foreground mt-4">
-              © {currentYear} Generational Divide Project. All rights reserved.
+              © {currentYear} Hamza S. All rights reserved.
             </p>
           </div>
         </motion.div>
