@@ -66,14 +66,6 @@ const Index = () => {
         activeIndex={activeSection}
         onNavigate={scrollToSection}
       />
-      
-      <ProgressIndicator
-        sections={slidesData.tableOfContents}
-        activeIndex={activeSection}
-        scrollProgress={scrollProgress}
-        onNavigate={scrollToSection}
-      />
-      <MobileProgressBar progress={scrollProgress} />
 
       <article aria-label="Act 1: The Narrative">
         {slidesData.slides.map((slide, index) => (
