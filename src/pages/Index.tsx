@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { SlideSection, SlideData } from '@/components/SlideSection';
-import { ProgressIndicator, MobileProgressBar } from '@/components/ProgressIndicator';
+import { TableOfContents } from '@/components/TableOfContents';
 import { TableOfContents } from '@/components/TableOfContents';
 import { QuotesSection } from '@/components/QuotesSection';
 import { DataPlayground } from '@/components/DataPlayground';
