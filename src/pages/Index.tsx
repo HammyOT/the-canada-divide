@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { SlideSection, SlideData } from '@/components/SlideSection';
 import { TableOfContents } from '@/components/TableOfContents';
-import { TableOfContents } from '@/components/TableOfContents';
 import { QuotesSection } from '@/components/QuotesSection';
 import { DataPlayground } from '@/components/DataPlayground';
 import { PolicyGrid } from '@/components/PolicyGrid';
