@@ -115,9 +115,11 @@ export function SlideSection({
         )}
 
         {/* Body text */}
-        <motion.p variants={itemVariants} className="text-body-lg text-muted-foreground mb-10 max-w-2xl font-serif leading-relaxed">
-          {slide.body}
-        </motion.p>
+        <motion.div variants={itemVariants} className="text-body-lg text-muted-foreground mb-10 max-w-2xl font-serif leading-relaxed space-y-4">
+          {slide.body.split('\n').filter(Boolean).map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </motion.div>
 
         {/* Stat callout - inline block */}
         <motion.div variants={itemVariants} className="mb-10 pl-4 border-l-2 border-primary/40 space-y-1">
