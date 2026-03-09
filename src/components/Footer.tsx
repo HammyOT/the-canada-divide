@@ -13,8 +13,8 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: reducedMotion ? 0.1 : 0.6 }}
-          className="text-center space-y-6"
-        >
+          className="text-center space-y-6">
+          
           {/* Logo/Title */}
           <div className="inline-flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
@@ -32,22 +32,22 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm">
-            <a 
-              href="#hook" 
-              className="text-muted-foreground hover:text-primary transition-colors focus-ring"
-            >
+            <a
+              href="#hook"
+              className="text-muted-foreground hover:text-primary transition-colors focus-ring">
+              
               Back to top
             </a>
-            <a 
-              href="#data-playground" 
-              className="text-muted-foreground hover:text-primary transition-colors focus-ring"
-            >
+            <a
+              href="#data-playground"
+              className="text-muted-foreground hover:text-primary transition-colors focus-ring">
+              
               Explore data
             </a>
-            <a 
-              href="#sources" 
-              className="text-muted-foreground hover:text-primary transition-colors focus-ring"
-            >
+            <a
+              href="#sources"
+              className="text-muted-foreground hover:text-primary transition-colors focus-ring">
+              
               Sources
             </a>
           </div>
@@ -55,7 +55,7 @@ export function Footer() {
           {/* Disclaimer */}
           <div className="pt-8 border-t border-border/30">
             <p className="text-xs text-muted-foreground max-w-2xl mx-auto">
-              This is a demonstration project with placeholder data. All statistics and quotes should be replaced with verified data from Statistics Canada, CMHC, and other official sources before publication. Built for educational purposes.
+              Built for educational purposes.  
             </p>
             <p className="text-xs text-muted-foreground mt-4">
               © {currentYear} Generational Divide Project. All rights reserved.
@@ -63,6 +63,6 @@ export function Footer() {
           </div>
         </motion.div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
