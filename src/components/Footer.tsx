@@ -14,9 +14,7 @@ export function Footer() {
           viewport={{ once: true }}
           transition={{ duration: reducedMotion ? 0.1 : 0.6 }}
           className="text-center space-y-6">
-          
-          {/* Logo/Title */}
-           <span className="text-lg font-semibold text-foreground">Generational Divide</span>
+
 
           {/* Tagline */}
           <p className="text-muted-foreground max-w-md mx-auto">
