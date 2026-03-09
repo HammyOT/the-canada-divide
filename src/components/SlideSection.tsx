@@ -100,37 +100,21 @@ export function SlideSection({
       }
     }
   };
-  return <section ref={ref} id={slide.id} className="relative min-h-screen flex items-center justify-center overflow-hidden border-b border-border/50" aria-labelledby={`slide-title-${slide.id}`}>
-      {/* Background */}
-      <div className="absolute inset-0">
-        {hasImage ? <>
-            <div className="absolute inset-0 bg-cover bg-center bg-background" style={{
-          backgroundImage: `url(${slide.backgroundImage})`
-        }} onError={e => {
-          (e.target as HTMLDivElement).style.backgroundImage = 'none';
-        }} />
-            <div className="absolute inset-0 image-overlay" />
-          </> : <div className={`absolute inset-0 bg-background ${index === 0 ? 'noise-overlay' : ''}`} />}
-        
-        <ThemeDecoration theme={slide.theme} reducedMotion={reducedMotion} />
-      </div>
-
+  return <section ref={ref} id={slide.id} className="relative overflow-hidden border-b border-border/30" aria-labelledby={`slide-title-${slide.id}`}>
       {/* Content */}
-      <motion.div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-20 py-20 max-w-4xl" variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
-        {/* Slide number */}
-        <motion.div variants={itemVariants} className="mb-8">
-          <span className="text-muted-foreground text-sm font-medium tracking-widest uppercase">
-            {String(index + 1).padStart(2, '0')} / 08
-          </span>
-        </motion.div>
-
+      <motion.div className="container mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 max-w-3xl" variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
         {/* Title */}
-        <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-display font-black text-foreground mb-12 leading-tight font-serif">
+        <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-3xl md:text-4xl font-black text-foreground mb-8 leading-tight font-serif">
           {slide.title}
         </motion.h2>
 
-        {/* Stat callout */}
-        <motion.div variants={itemVariants} className="mb-12 space-y-2">
+        {/* Body text */}
+        <motion.p variants={itemVariants} className="text-body-lg text-muted-foreground mb-10 max-w-2xl font-serif leading-relaxed">
+          {slide.body}
+        </motion.p>
+
+        {/* Stat callout - inline block */}
+        <motion.div variants={itemVariants} className="mb-10 pl-4 border-l-2 border-primary/40 space-y-1">
           <p className="stat-label font-mono">{slide.statLabel}</p>
           <p className="text-stat stat-value font-serif">{slide.statValue}</p>
           <span className="placeholder-badge">
@@ -142,40 +126,10 @@ export function SlideSection({
           </span>
         </motion.div>
 
-        {/* Body text */}
-        <motion.p variants={itemVariants} className="text-body-lg text-muted-foreground mb-8 max-w-2xl font-serif">
-          {slide.body}
-        </motion.p>
-
         {/* Question */}
-        <motion.p variants={itemVariants} className="text-xl md:text-2xl font-medium text-foreground italic font-serif">
+        <motion.p variants={itemVariants} className="text-lg md:text-xl font-medium text-foreground italic font-serif">
           "{slide.question}"
         </motion.p>
       </motion.div>
-
-      {/* Scroll indicator (only on first slide) */}
-      {index === 0 && <motion.div className="absolute bottom-10 left-1/2 -translate-x-1/2" initial={{
-      opacity: 0,
-      y: -10
-    }} animate={{
-      opacity: 1,
-      y: 0
-    }} transition={{
-      delay: 1.5,
-      duration: 0.6
-    }}>
-          <motion.div animate={reducedMotion ? {} : {
-        y: [0, 8, 0]
-      }} transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }} className="flex flex-col items-center text-muted-foreground">
-            <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.div>
-        </motion.div>}
     </section>;
 }

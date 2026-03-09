@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { SlideSection, SlideData } from '@/components/SlideSection';
-import { ProgressIndicator, MobileProgressBar } from '@/components/ProgressIndicator';
 import { TableOfContents } from '@/components/TableOfContents';
 import { QuotesSection } from '@/components/QuotesSection';
 import { DataPlayground } from '@/components/DataPlayground';
@@ -66,14 +65,6 @@ const Index = () => {
         activeIndex={activeSection}
         onNavigate={scrollToSection}
       />
-      
-      <ProgressIndicator
-        sections={slidesData.tableOfContents}
-        activeIndex={activeSection}
-        scrollProgress={scrollProgress}
-        onNavigate={scrollToSection}
-      />
-      <MobileProgressBar progress={scrollProgress} />
 
       <article aria-label="Act 1: The Narrative">
         {slidesData.slides.map((slide, index) => (
