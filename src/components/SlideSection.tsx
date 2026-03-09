@@ -22,10 +22,10 @@ interface SlideSectionProps {
 const ThemeDecoration = ({
   theme,
   reducedMotion
-}: {
-  theme: string;
-  reducedMotion: boolean;
-}) => {
+
+
+
+}: {theme: string;reducedMotion: boolean;}) => {
   switch (theme) {
     case 'noise':
       return null;
@@ -104,7 +104,7 @@ export function SlideSection({
       {/* Content */}
       <motion.div className="container mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 max-w-3xl" variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
         {/* Title */}
-        <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-3xl md:text-4xl font-black text-foreground mb-8 leading-tight font-serif">
+        <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-3xl font-black text-foreground mb-8 leading-tight font-serif md:text-display">
           {slide.title}
         </motion.h2>
 
