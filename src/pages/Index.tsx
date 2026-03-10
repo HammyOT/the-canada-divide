@@ -68,6 +68,7 @@ const Index = () => {
       />
 
       <article aria-label="Act 1: The Narrative">
+        <HeroSection title={slidesData.slides[0].title} id={slidesData.slides[0].id} />
         {slidesData.slides.map((slide, index) => (
           <div key={slide.id}>
             <SlideSection slide={slide} index={index} />
