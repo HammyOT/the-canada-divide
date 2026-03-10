@@ -103,16 +103,12 @@ export function SlideSection({
   return <section ref={ref} id={slide.id} className="relative overflow-hidden border-b border-border/30" aria-labelledby={`slide-title-${slide.id}`}>
       {/* Content */}
       <motion.div className="container mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 max-w-3xl" variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
-        {/* Title */}
-        {index === 0 ?
-      <motion.h1 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-display font-black text-foreground mb-10 leading-none font-serif text-center">
-            {slide.title}
-          </motion.h1> :
-
-      <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-3xl font-black text-foreground mb-8 leading-tight font-serif">
+        {/* Title — skip for first slide (rendered by HeroSection) */}
+        {index !== 0 && (
+          <motion.h2 id={`slide-title-${slide.id}`} variants={itemVariants} className="text-3xl font-black text-foreground mb-8 leading-tight font-serif">
             {slide.title}
           </motion.h2>
-      }
+        )}
 
         {/* Body text */}
         <motion.div variants={itemVariants} className="text-body-lg text-muted-foreground mb-10 max-w-2xl font-serif leading-relaxed space-y-4">

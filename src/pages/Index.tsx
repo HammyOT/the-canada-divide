@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { SlideSection, SlideData } from '@/components/SlideSection';
+import { HeroSection } from '@/components/HeroSection';
 import { TableOfContents } from '@/components/TableOfContents';
 import { QuotesSection } from '@/components/QuotesSection';
 import { DataPlayground } from '@/components/DataPlayground';
@@ -67,6 +68,7 @@ const Index = () => {
       />
 
       <article aria-label="Act 1: The Narrative">
+        <HeroSection title={slidesData.slides[0].title} id={slidesData.slides[0].id} />
         {slidesData.slides.map((slide, index) => (
           <div key={slide.id}>
             <SlideSection slide={slide} index={index} />
