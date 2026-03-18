@@ -284,9 +284,9 @@ export function DataPlayground() {
             <path d="M12 16v-4M12 8h.01" />
           </svg>
           <div>
-            <p className="font-medium text-foreground">Placeholder Data</p>
+            <p className="font-medium text-foreground">Data Sources</p>
             <p className="text-sm text-muted-foreground">
-              All charts use sample data for demonstration. Replace with real StatCan/CMHC data before publication.
+              Housing data sourced from Bank of Canada. Wages and education charts still use sample data for demonstration.
             </p>
           </div>
         </motion.div>
