@@ -223,7 +223,7 @@ export function DataPlayground() {
       case 'wages':
         return 'Wage Growth vs Consumer Prices (2001–2025)';
       case 'education':
-        return 'Education Costs & Student Debt (2005–2024)';
+        return 'Canadian Undergraduate Tuition (2007–2026)';
       default:
         return '';
     }
