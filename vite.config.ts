@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 5000,
+    allowedHosts: ["3c1e22dd-5829-47f0-988a-b8abaaf0fee4-00-15m3fvrqvzu2s.spock.replit.dev"],
     hmr: {
       overlay: false,
     },
