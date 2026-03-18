@@ -125,7 +125,7 @@ export function DataPlayground() {
               <YAxis 
                 stroke={CHART_COLORS.text}
                 tick={{ fill: CHART_COLORS.text, fontSize: 12 }}
-                domain={[90, 170]}
+                domain={[85, 160]}
                 label={{ 
                   value: 'Index (2005=100)', 
                   angle: -90, 
@@ -222,7 +222,7 @@ export function DataPlayground() {
       case 'housing':
         return 'Housing Affordability Index (1990–2025)';
       case 'wages':
-        return 'Wage Growth vs Consumer Prices (2005–2024)';
+        return 'Wage Growth vs Consumer Prices (2001–2025)';
       case 'education':
         return 'Education Costs & Student Debt (2005–2024)';
       default:
@@ -235,7 +235,7 @@ export function DataPlayground() {
       case 'housing':
         return 'The affordability index represents mortgage payments as a share of income. Higher values mean housing is less affordable. Source: Bank of Canada.';
       case 'wages':
-        return 'The gap between the lines shows how purchasing power has eroded. When CPI rises faster than wages, real income falls.';
+        return 'CPI data from Statistics Canada (Table 18-10-0006-01). Wage data is still placeholder. The gap shows how purchasing power has eroded.';
       case 'education':
         return 'Both tuition costs and total student debt have grown faster than inflation, increasing the burden on new graduates.';
       default:
@@ -286,7 +286,7 @@ export function DataPlayground() {
           <div>
             <p className="font-medium text-foreground">Data Sources</p>
             <p className="text-sm text-muted-foreground">
-              Housing data sourced from Bank of Canada. Wages and education charts still use sample data for demonstration.
+              Housing data: Bank of Canada. CPI data: Statistics Canada. Wage and education charts still use placeholder data.
             </p>
           </div>
         </motion.div>
