@@ -1,5 +1,5 @@
 {
-  "_disclaimer": "PLACEHOLDER DATA — This is sample data for demonstration purposes only. Replace with real StatCan/CMHC/Bank of Canada data before publication.",
+  "_disclaimer": "Housing affordability data sourced from Bank of Canada (INDINF_AFFORD_Q). Other datasets remain placeholder data for demonstration.",
   
   "housingAffordability": [
     { "year": 1990, "index": 0.510, "nhpi": null },

@@ -78,9 +78,10 @@ export function DataPlayground() {
               <YAxis 
                 stroke={CHART_COLORS.text}
                 tick={{ fill: CHART_COLORS.text, fontSize: 12 }}
-                domain={[0, 350]}
+                domain={[0.2, 0.6]}
+                tickFormatter={(v: number) => `${(v * 100).toFixed(0)}%`}
                 label={{ 
-                  value: 'Index (2005=100)', 
+                  value: 'Share of Income (%)', 
                   angle: -90, 
                   position: 'insideLeft',
                   fill: CHART_COLORS.text,
@@ -95,7 +96,7 @@ export function DataPlayground() {
                   color: 'hsl(220, 20%, 10%)'
                 }}
                 labelFormatter={(value) => `Year: ${value}`}
-                formatter={(value: number) => [`${value}`, 'Affordability Index']}
+                formatter={(value: number) => [`${(value * 100).toFixed(1)}%`, 'Affordability Index']}
               />
               <Legend />
               <Line 
