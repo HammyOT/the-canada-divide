@@ -236,7 +236,7 @@ export function DataPlayground() {
       case 'wages':
         return 'Wage data from Statistics Canada Table 14-10-0222-01 (average weekly earnings, January values). CPI from Table 18-10-0006-01. Both rebased to 2005=100.';
       case 'education':
-        return 'Both tuition costs and total student debt have grown faster than inflation, increasing the burden on new graduates.';
+        return 'Average annual tuition fees for Canadian undergraduates. Source: Statistics Canada Table 37-10-0045. Student debt data (NGS, Table 37-10-0036-01) available every 5 years.';
       default:
         return '';
     }
