@@ -5,11 +5,13 @@ import {
   Line,
   BarChart,
   Bar,
+  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
+  ReferenceLine,
   ResponsiveContainer,
 } from 'recharts';
 import { toPng } from 'html-to-image';
@@ -17,11 +19,11 @@ import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useInView } from '@/hooks/useInView';
 import sampleData from '@/data/sampleData.json';
 
-type TabId = 'housing' | 'wages' | 'education';
+type TabId = 'housing' | 'inflation' | 'education';
 
 const tabs: { id: TabId; label: string }[] = [
   { id: 'housing', label: 'Housing Affordability' },
-  { id: 'wages', label: 'Wages vs. Prices' },
+  { id: 'inflation', label: 'Inflation Rate' },
   { id: 'education', label: 'Tuition Costs' },
 ];
 
@@ -38,6 +40,7 @@ export function DataPlayground() {
   const reducedMotion = useReducedMotion();
   const [ref, isInView] = useInView<HTMLElement>({ threshold: 0.08 });
   const [activeTab, setActiveTab] = useState<TabId>('housing');
+  const safeTab: TabId = tabs.some((t) => t.id === activeTab) ? activeTab : 'housing';
   const chartRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = async () => {
@@ -45,7 +48,7 @@ export function DataPlayground() {
     try {
       const url = await toPng(chartRef.current, { backgroundColor: 'hsl(40,30%,97%)', pixelRatio: 2 });
       const a = document.createElement('a');
-      a.download = `chart-${activeTab}-${Date.now()}.png`;
+      a.download = `chart-${safeTab}-${Date.now()}.png`;
       a.href = url;
       a.click();
     } catch (e) {
@@ -68,7 +71,7 @@ export function DataPlayground() {
   };
 
   const renderChart = () => {
-    switch (activeTab) {
+    switch (safeTab) {
       case 'housing':
         return (
           <ResponsiveContainer width="100%" height={380}>
@@ -99,22 +102,38 @@ export function DataPlayground() {
           </ResponsiveContainer>
         );
 
-      case 'wages':
+      case 'inflation':
         return (
           <ResponsiveContainer width="100%" height={380}>
-            <LineChart data={sampleData.wagesVsCpi} margin={{ top: 8, right: 16, left: 8, bottom: 8 }}>
+            <BarChart data={sampleData.inflationRate} margin={{ top: 8, right: 16, left: 8, bottom: 8 }}>
               <CartesianGrid strokeDasharray="3 3" stroke={C.grid} />
-              <XAxis dataKey="year" {...axisProps} />
+              <XAxis
+                dataKey="year"
+                {...axisProps}
+                interval={3}
+              />
               <YAxis
                 {...axisProps}
-                domain={[85, 190]}
-                label={{ value: 'Index (2005=100)', angle: -90, position: 'insideLeft', fill: C.text, fontSize: 11, fontFamily: "'Inter', sans-serif" }}
+                domain={[0, 8]}
+                tickFormatter={(v: number) => `${v}%`}
               />
-              <Tooltip contentStyle={tooltipStyle} labelFormatter={(v) => `Year: ${v}`} />
-              <Legend wrapperStyle={{ fontSize: '12px', fontFamily: "'Inter', sans-serif" }} />
-              <Line type="monotone" dataKey="wageIndex" name="Wage Growth" stroke={C.ink} strokeWidth={2.5} dot={false} activeDot={{ r: 5 }} />
-              <Line type="monotone" dataKey="cpiIndex" name="Consumer Price Index" stroke={C.accent} strokeWidth={2.5} dot={false} activeDot={{ r: 5, fill: C.accent }} />
-            </LineChart>
+              <Tooltip
+                contentStyle={tooltipStyle}
+                labelFormatter={(v) => `${v}`}
+                formatter={(v: number) => [`${v.toFixed(1)}%`, 'Annual Inflation']}
+              />
+              <ReferenceLine y={2} stroke={C.accent} strokeDasharray="6 3" strokeWidth={1.5} label={{ value: 'BoC 2% target', position: 'insideTopRight', fill: C.accent, fontSize: 10, fontFamily: "'Inter', sans-serif" }} />
+              <ReferenceLine y={1} stroke={C.grid} strokeDasharray="4 4" strokeWidth={1} />
+              <ReferenceLine y={3} stroke={C.grid} strokeDasharray="4 4" strokeWidth={1} />
+              <Bar dataKey="rate" name="Annual Inflation (%)" radius={[2, 2, 0, 0]}>
+                {sampleData.inflationRate.map((entry) => (
+                  <Cell
+                    key={entry.year}
+                    fill={entry.rate > 3 ? C.accent : entry.rate < 1 ? 'hsl(220,15%,62%)' : C.ink}
+                  />
+                ))}
+              </Bar>
+            </BarChart>
           </ResponsiveContainer>
         );
 
@@ -148,10 +167,10 @@ export function DataPlayground() {
       note: 'Mortgage payments as a share of average household disposable income. Higher = less affordable.',
       source: 'Bank of Canada housing affordability index (INDINF_AFFORD_Q)',
     },
-    wages: {
-      title: 'Wage Growth vs. Consumer Prices, 2001–2025',
-      note: 'Both series rebased to 2005=100. When the red CPI line rises faster than the black wage line, real purchasing power falls.',
-      source: 'Statistics Canada Tables 14-10-0222-01 (wages) & 18-10-0006-01 (CPI)',
+    inflation: {
+      title: 'Annual Inflation Rate (CPI), 1991–2025',
+      note: 'Year-over-year % change in the annual average Consumer Price Index (2002=100). The dashed red line marks the Bank of Canada\'s 2% inflation target; the grey dashed lines bound the 1–3% control range.',
+      source: 'Bank of Canada — Total CPI series STATIC_INFLATIONCALC (monthly values averaged annually)',
     },
     education: {
       title: 'Average Canadian Undergraduate Tuition, 2007–2026',
@@ -160,7 +179,7 @@ export function DataPlayground() {
     },
   };
 
-  const current = meta[activeTab];
+  const current = meta[safeTab];
 
   return (
     <section
@@ -201,9 +220,9 @@ export function DataPlayground() {
             <button
               key={tab.id}
               role="tab"
-              aria-selected={activeTab === tab.id}
+              aria-selected={safeTab === tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`data-tab ${activeTab === tab.id ? 'data-tab-active' : ''}`}
+              className={`data-tab ${safeTab === tab.id ? 'data-tab-active' : ''}`}
             >
               {tab.label}
             </button>
@@ -227,10 +246,10 @@ export function DataPlayground() {
           <div className="data-info-card">
             <p className="data-info-label">How to read</p>
             <ul className="data-info-list">
-              <li>Hover over any point or bar for the exact value</li>
-              <li>Housing index: share of income spent on a mortgage</li>
-              <li>Wages/CPI: indexed to 2005=100 for a fair comparison</li>
-              <li>Click "Download PNG" to save the chart</li>
+              <li>Hover over any bar or point for the exact value</li>
+              <li>Housing: share of income required for a mortgage payment</li>
+              <li>Inflation: dashed red line = Bank of Canada's 2% target</li>
+              <li>Click "Download PNG" to save the current chart</li>
             </ul>
           </div>
           <div className="data-info-card">
