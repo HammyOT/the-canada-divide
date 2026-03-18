@@ -21,16 +21,29 @@ export function NewsNav({ items, activeIndex, onNavigate }: NewsNavProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const onHero = !scrolled;
+
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-paper/97 backdrop-blur-sm shadow-sm border-b border-ink/10' : 'bg-transparent'}`}>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-paper/97 backdrop-blur-sm shadow-sm border-b border-ink/10'
+            : 'bg-gradient-to-b from-black/40 to-transparent'
+        }`}
+      >
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between h-14">
+
             <div className="flex items-center gap-3">
               <div className="w-6 h-6 bg-accent rounded-sm flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-xs font-black leading-none">GI</span>
               </div>
-              <span className="font-serif font-bold text-sm text-ink tracking-tight hidden sm:block">
+              <span
+                className={`font-serif font-bold text-sm tracking-tight hidden sm:block transition-colors duration-300 ${
+                  onHero ? 'text-white' : 'text-ink'
+                }`}
+              >
                 Generational Inequality
               </span>
             </div>
@@ -40,11 +53,13 @@ export function NewsNav({ items, activeIndex, onNavigate }: NewsNavProps) {
                 <button
                   key={item.id}
                   onClick={() => onNavigate(item.id)}
-                  className={`px-3 py-1.5 text-xs font-medium tracking-wide uppercase transition-colors rounded
-                    ${activeIndex === i
+                  className={`px-3 py-1.5 text-xs font-medium tracking-wide uppercase transition-colors duration-300 rounded ${
+                    activeIndex === i
                       ? 'text-accent'
+                      : onHero
+                      ? 'text-white/70 hover:text-white'
                       : 'text-ink/50 hover:text-ink'
-                    }`}
+                  }`}
                 >
                   {item.label}
                 </button>
@@ -52,7 +67,9 @@ export function NewsNav({ items, activeIndex, onNavigate }: NewsNavProps) {
             </nav>
 
             <button
-              className="md:hidden p-2 text-ink/60 hover:text-ink"
+              className={`md:hidden p-2 transition-colors duration-300 ${
+                onHero ? 'text-white/80 hover:text-white' : 'text-ink/60 hover:text-ink'
+              }`}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
@@ -74,8 +91,9 @@ export function NewsNav({ items, activeIndex, onNavigate }: NewsNavProps) {
               <button
                 key={item.id}
                 onClick={() => { onNavigate(item.id); setMenuOpen(false); }}
-                className={`text-left px-4 py-3 text-sm font-medium uppercase tracking-wide border-b border-ink/10
-                  ${activeIndex === i ? 'text-accent' : 'text-ink/70 hover:text-ink'}`}
+                className={`text-left px-4 py-3 text-sm font-medium uppercase tracking-wide border-b border-ink/10 ${
+                  activeIndex === i ? 'text-accent' : 'text-ink/70 hover:text-ink'
+                }`}
               >
                 {item.label}
               </button>
