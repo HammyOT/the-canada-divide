@@ -125,7 +125,7 @@ export function DataPlayground() {
               <YAxis 
                 stroke={CHART_COLORS.text}
                 tick={{ fill: CHART_COLORS.text, fontSize: 12 }}
-                domain={[85, 160]}
+                domain={[85, 185]}
                 label={{ 
                   value: 'Index (2005=100)', 
                   angle: -90, 
