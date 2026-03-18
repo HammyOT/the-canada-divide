@@ -167,7 +167,7 @@ export function DataPlayground() {
       case 'education':
         return (
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={sampleData.educationCosts.filter((_, i) => i % 2 === 0)}>
+            <BarChart data={sampleData.educationCosts}>
               <CartesianGrid strokeDasharray="3 3" stroke={CHART_COLORS.grid} />
               <XAxis 
                 dataKey="year" 
@@ -177,9 +177,10 @@ export function DataPlayground() {
               <YAxis 
                 stroke={CHART_COLORS.text}
                 tick={{ fill: CHART_COLORS.text, fontSize: 12 }}
-                domain={[0, 280]}
+                domain={[0, 9000]}
+                tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}k`}
                 label={{ 
-                  value: 'Index (2005=100)', 
+                  value: 'Annual Tuition ($)', 
                   angle: -90, 
                   position: 'insideLeft',
                   fill: CHART_COLORS.text,
@@ -193,19 +194,17 @@ export function DataPlayground() {
                   borderRadius: '4px',
                   color: 'hsl(220, 20%, 10%)'
                 }}
-                labelFormatter={(value) => `Year: ${value}`}
+                labelFormatter={(value) => `${value}/${Number(value) + 1} Academic Year`}
+                formatter={(value: number, name: string) => {
+                  if (value === null) return ['-', name];
+                  return [`$${value.toLocaleString()}`, name];
+                }}
               />
               <Legend />
               <Bar 
-                dataKey="tuitionIndex" 
-                name="Tuition Costs"
+                dataKey="tuition" 
+                name="Canadian Undergraduate Tuition"
                 fill={CHART_COLORS.primary}
-                radius={[4, 4, 0, 0]}
-              />
-              <Bar 
-                dataKey="debtIndex" 
-                name="Student Debt"
-                fill={CHART_COLORS.tertiary}
                 radius={[4, 4, 0, 0]}
               />
             </BarChart>
