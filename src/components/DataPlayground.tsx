@@ -125,7 +125,7 @@ export function DataPlayground() {
               <YAxis 
                 stroke={CHART_COLORS.text}
                 tick={{ fill: CHART_COLORS.text, fontSize: 12 }}
-                domain={[85, 160]}
+                domain={[85, 185]}
                 label={{ 
                   value: 'Index (2005=100)', 
                   angle: -90, 
@@ -167,7 +167,7 @@ export function DataPlayground() {
       case 'education':
         return (
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={sampleData.educationCosts.filter((_, i) => i % 2 === 0)}>
+            <BarChart data={sampleData.educationCosts}>
               <CartesianGrid strokeDasharray="3 3" stroke={CHART_COLORS.grid} />
               <XAxis 
                 dataKey="year" 
@@ -177,9 +177,10 @@ export function DataPlayground() {
               <YAxis 
                 stroke={CHART_COLORS.text}
                 tick={{ fill: CHART_COLORS.text, fontSize: 12 }}
-                domain={[0, 280]}
+                domain={[0, 9000]}
+                tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}k`}
                 label={{ 
-                  value: 'Index (2005=100)', 
+                  value: 'Annual Tuition ($)', 
                   angle: -90, 
                   position: 'insideLeft',
                   fill: CHART_COLORS.text,
@@ -193,19 +194,17 @@ export function DataPlayground() {
                   borderRadius: '4px',
                   color: 'hsl(220, 20%, 10%)'
                 }}
-                labelFormatter={(value) => `Year: ${value}`}
+                labelFormatter={(value) => `${value}/${Number(value) + 1} Academic Year`}
+                formatter={(value: number, name: string) => {
+                  if (value === null) return ['-', name];
+                  return [`$${value.toLocaleString()}`, name];
+                }}
               />
               <Legend />
               <Bar 
-                dataKey="tuitionIndex" 
-                name="Tuition Costs"
+                dataKey="tuition" 
+                name="Canadian Undergraduate Tuition"
                 fill={CHART_COLORS.primary}
-                radius={[4, 4, 0, 0]}
-              />
-              <Bar 
-                dataKey="debtIndex" 
-                name="Student Debt"
-                fill={CHART_COLORS.tertiary}
                 radius={[4, 4, 0, 0]}
               />
             </BarChart>
@@ -224,7 +223,7 @@ export function DataPlayground() {
       case 'wages':
         return 'Wage Growth vs Consumer Prices (2001–2025)';
       case 'education':
-        return 'Education Costs & Student Debt (2005–2024)';
+        return 'Canadian Undergraduate Tuition (2007–2026)';
       default:
         return '';
     }
@@ -235,9 +234,9 @@ export function DataPlayground() {
       case 'housing':
         return 'The affordability index represents mortgage payments as a share of income. Higher values mean housing is less affordable. Source: Bank of Canada.';
       case 'wages':
-        return 'CPI data from Statistics Canada (Table 18-10-0006-01). Wage data is still placeholder. The gap shows how purchasing power has eroded.';
+        return 'Wage data from Statistics Canada Table 14-10-0222-01 (average weekly earnings, January values). CPI from Table 18-10-0006-01. Both rebased to 2005=100.';
       case 'education':
-        return 'Both tuition costs and total student debt have grown faster than inflation, increasing the burden on new graduates.';
+        return 'Average annual tuition fees for Canadian undergraduates. Source: Statistics Canada Table 37-10-0045. Student debt data (NGS, Table 37-10-0036-01) available every 5 years.';
       default:
         return '';
     }
@@ -286,7 +285,7 @@ export function DataPlayground() {
           <div>
             <p className="font-medium text-foreground">Data Sources</p>
             <p className="text-sm text-muted-foreground">
-              Housing data: Bank of Canada. CPI data: Statistics Canada. Wage and education charts still use placeholder data.
+              Housing data: Bank of Canada. CPI & wages: Statistics Canada. Tuition: Statistics Canada. Student debt and rent burden charts still use limited data.
             </p>
           </div>
         </motion.div>
