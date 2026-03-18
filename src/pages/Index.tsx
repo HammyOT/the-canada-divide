@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { SlideSection, SlideData } from '@/components/SlideSection';
 import { HeroSection } from '@/components/HeroSection';
 import { NewsNav } from '@/components/NewsNav';
-import { QuotesSection } from '@/components/QuotesSection';
 import { DataPlayground } from '@/components/DataPlayground';
 import { PolicyGrid } from '@/components/PolicyGrid';
 import { SourcesPanel } from '@/components/SourcesPanel';
