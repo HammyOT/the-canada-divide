@@ -382,7 +382,7 @@ export function DataPlayground() {
               How to Read
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• All indices are normalized to 2005 = 100</li>
+              <li>• Housing index: share of income spent on mortgage</li>
               <li>• Higher values indicate growth from baseline</li>
               <li>• Hover over points for exact values</li>
               <li>• Download charts for presentations</li>
