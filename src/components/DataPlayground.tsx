@@ -78,9 +78,10 @@ export function DataPlayground() {
               <YAxis 
                 stroke={CHART_COLORS.text}
                 tick={{ fill: CHART_COLORS.text, fontSize: 12 }}
-                domain={[0, 350]}
+                domain={[0.2, 0.6]}
+                tickFormatter={(v: number) => `${(v * 100).toFixed(0)}%`}
                 label={{ 
-                  value: 'Index (2005=100)', 
+                  value: 'Share of Income (%)', 
                   angle: -90, 
                   position: 'insideLeft',
                   fill: CHART_COLORS.text,
@@ -95,7 +96,7 @@ export function DataPlayground() {
                   color: 'hsl(220, 20%, 10%)'
                 }}
                 labelFormatter={(value) => `Year: ${value}`}
-                formatter={(value: number) => [`${value}`, 'Affordability Index']}
+                formatter={(value: number) => [`${(value * 100).toFixed(1)}%`, 'Affordability Index']}
               />
               <Legend />
               <Line 
@@ -219,7 +220,7 @@ export function DataPlayground() {
   const getChartTitle = () => {
     switch (activeTab) {
       case 'housing':
-        return 'Housing Affordability Index (2005–2024)';
+        return 'Housing Affordability Index (1990–2025)';
       case 'wages':
         return 'Wage Growth vs Consumer Prices (2005–2024)';
       case 'education':
@@ -232,7 +233,7 @@ export function DataPlayground() {
   const getChartDescription = () => {
     switch (activeTab) {
       case 'housing':
-        return 'Higher values indicate worse affordability. The index combines home prices and mortgage rates relative to median incomes.';
+        return 'The affordability index represents mortgage payments as a share of income. Higher values mean housing is less affordable. Source: Bank of Canada.';
       case 'wages':
         return 'The gap between the lines shows how purchasing power has eroded. When CPI rises faster than wages, real income falls.';
       case 'education':
@@ -283,9 +284,9 @@ export function DataPlayground() {
             <path d="M12 16v-4M12 8h.01" />
           </svg>
           <div>
-            <p className="font-medium text-foreground">Placeholder Data</p>
+            <p className="font-medium text-foreground">Data Sources</p>
             <p className="text-sm text-muted-foreground">
-              All charts use sample data for demonstration. Replace with real StatCan/CMHC data before publication.
+              Housing data sourced from Bank of Canada. Wages and education charts still use sample data for demonstration.
             </p>
           </div>
         </motion.div>
@@ -381,7 +382,7 @@ export function DataPlayground() {
               How to Read
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• All indices are normalized to 2005 = 100</li>
+              <li>• Housing index: share of income spent on mortgage</li>
               <li>• Higher values indicate growth from baseline</li>
               <li>• Hover over points for exact values</li>
               <li>• Download charts for presentations</li>
