@@ -557,6 +557,198 @@
   .custom-scrollbar::-webkit-scrollbar-thumb { background: hsl(var(--rule)); border-radius: 99px; }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: hsl(var(--ink-mid)); }
 
+  /* ── Data Playground ── */
+  .data-playground-section {
+    border-top: 3px solid hsl(var(--ink));
+    background: hsl(var(--paper-warm));
+  }
+
+  .data-playground-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 3.5rem;
+  }
+
+  .data-playground-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    flex-wrap: wrap;
+  }
+
+  .data-playground-kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+    margin-bottom: 0.3rem;
+  }
+
+  .data-playground-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    color: hsl(var(--ink));
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+
+  .data-playground-sub {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.92rem;
+    color: hsl(var(--ink-mid));
+    line-height: 1.5;
+  }
+
+  .data-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.9rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: hsl(var(--ink));
+    border: 1px solid hsl(var(--rule));
+    background: hsl(var(--paper));
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .data-download-btn:hover {
+    background: hsl(var(--rule));
+  }
+
+  .data-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid hsl(var(--ink));
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+  }
+
+  .data-tab {
+    padding: 0.5rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: hsl(var(--ink-mid));
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s;
+    white-space: nowrap;
+  }
+
+  .data-tab:hover {
+    color: hsl(var(--ink));
+  }
+
+  .data-tab-active {
+    color: hsl(var(--ink));
+    border-bottom-color: hsl(var(--accent));
+  }
+
+  .data-chart-card {
+    background: hsl(var(--paper));
+    border: 1px solid hsl(var(--rule));
+    padding: 1.2rem 1rem 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .data-chart-meta {
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid hsl(var(--rule));
+  }
+
+  .data-chart-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: hsl(var(--ink));
+    margin-bottom: 0.25rem;
+  }
+
+  .data-chart-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: hsl(var(--ink-mid));
+    line-height: 1.5;
+  }
+
+  .data-chart-source {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    color: hsl(var(--ink-faint));
+    font-style: italic;
+    padding-top: 0.5rem;
+    border-top: 1px solid hsl(var(--rule));
+    margin-top: 0.5rem;
+  }
+
+  .data-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 560px) {
+    .data-info-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .data-info-card {
+    border: 1px solid hsl(var(--rule));
+    padding: 1rem;
+  }
+
+  .data-info-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: hsl(var(--ink-mid));
+    margin-bottom: 0.5rem;
+  }
+
+  .data-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .data-info-list li {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 0.82rem;
+    color: hsl(var(--ink));
+    line-height: 1.55;
+    padding: 0.2rem 0;
+    padding-left: 0.9rem;
+    position: relative;
+  }
+
+  .data-info-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: hsl(var(--ink-faint));
+    font-size: 0.7rem;
+  }
+
   /* ── Accent ── */
   .accent { color: hsl(var(--accent)); }
 }

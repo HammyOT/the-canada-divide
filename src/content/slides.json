@@ -107,6 +107,7 @@
     { "id": "policy", "label": "Policy" },
     { "id": "mobility", "label": "Mobility" },
     { "id": "quotes", "label": "Voices" },
+    { "id": "data-playground", "label": "Data" },
     { "id": "policy-options", "label": "Options" }
   ],
   "quotes": [
