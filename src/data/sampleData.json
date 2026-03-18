@@ -1,5 +1,5 @@
 {
-  "_disclaimer": "Housing affordability data sourced from Bank of Canada (INDINF_AFFORD_Q). Other datasets remain placeholder data for demonstration.",
+  "_disclaimer": "Housing data: Bank of Canada (INDINF_AFFORD_Q). CPI data: Statistics Canada Table 18-10-0006-01 (All-items, seasonally adjusted, 2002=100, rebased to 2005=100). Wage data remains placeholder.",
   
   "housingAffordability": [
     { "year": 1990, "index": 0.510, "nhpi": null },
@@ -41,26 +41,31 @@
   ],
   
   "wagesVsCpi": [
-    { "year": 2005, "wageIndex": 100, "cpiIndex": 100 },
-    { "year": 2006, "wageIndex": 102, "cpiIndex": 102 },
-    { "year": 2007, "wageIndex": 104, "cpiIndex": 104 },
-    { "year": 2008, "wageIndex": 106, "cpiIndex": 107 },
-    { "year": 2009, "wageIndex": 107, "cpiIndex": 108 },
-    { "year": 2010, "wageIndex": 109, "cpiIndex": 110 },
-    { "year": 2011, "wageIndex": 111, "cpiIndex": 113 },
-    { "year": 2012, "wageIndex": 113, "cpiIndex": 115 },
-    { "year": 2013, "wageIndex": 115, "cpiIndex": 117 },
-    { "year": 2014, "wageIndex": 117, "cpiIndex": 120 },
-    { "year": 2015, "wageIndex": 119, "cpiIndex": 122 },
-    { "year": 2016, "wageIndex": 121, "cpiIndex": 124 },
-    { "year": 2017, "wageIndex": 123, "cpiIndex": 126 },
-    { "year": 2018, "wageIndex": 126, "cpiIndex": 129 },
-    { "year": 2019, "wageIndex": 129, "cpiIndex": 132 },
-    { "year": 2020, "wageIndex": 131, "cpiIndex": 134 },
-    { "year": 2021, "wageIndex": 134, "cpiIndex": 139 },
-    { "year": 2022, "wageIndex": 138, "cpiIndex": 148 },
-    { "year": 2023, "wageIndex": 143, "cpiIndex": 154 },
-    { "year": 2024, "wageIndex": 148, "cpiIndex": 158 }
+    { "year": 2001, "wageIndex": 91.4, "cpiIndex": 91.4 },
+    { "year": 2002, "wageIndex": 93.5, "cpiIndex": 93.5 },
+    { "year": 2003, "wageIndex": 95.5, "cpiIndex": 96.0 },
+    { "year": 2004, "wageIndex": 97.8, "cpiIndex": 97.8 },
+    { "year": 2005, "wageIndex": 100, "cpiIndex": 100.0 },
+    { "year": 2006, "wageIndex": 102, "cpiIndex": 102.0 },
+    { "year": 2007, "wageIndex": 104, "cpiIndex": 104.2 },
+    { "year": 2008, "wageIndex": 106, "cpiIndex": 106.7 },
+    { "year": 2009, "wageIndex": 107, "cpiIndex": 107.0 },
+    { "year": 2010, "wageIndex": 109, "cpiIndex": 108.9 },
+    { "year": 2011, "wageIndex": 111, "cpiIndex": 112.0 },
+    { "year": 2012, "wageIndex": 113, "cpiIndex": 113.8 },
+    { "year": 2013, "wageIndex": 115, "cpiIndex": 114.8 },
+    { "year": 2014, "wageIndex": 117, "cpiIndex": 117.0 },
+    { "year": 2015, "wageIndex": 119, "cpiIndex": 118.3 },
+    { "year": 2016, "wageIndex": 121, "cpiIndex": 120.0 },
+    { "year": 2017, "wageIndex": 123, "cpiIndex": 121.9 },
+    { "year": 2018, "wageIndex": 126, "cpiIndex": 124.7 },
+    { "year": 2019, "wageIndex": 129, "cpiIndex": 127.1 },
+    { "year": 2020, "wageIndex": 131, "cpiIndex": 128.0 },
+    { "year": 2021, "wageIndex": 134, "cpiIndex": 132.4 },
+    { "year": 2022, "wageIndex": 138, "cpiIndex": 141.4 },
+    { "year": 2023, "wageIndex": 143, "cpiIndex": 146.9 },
+    { "year": 2024, "wageIndex": 148, "cpiIndex": 150.4 },
+    { "year": 2025, "wageIndex": 152, "cpiIndex": 153.5 }
   ],
   
   "educationCosts": [

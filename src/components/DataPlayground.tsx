@@ -286,7 +286,7 @@ export function DataPlayground() {
           <div>
             <p className="font-medium text-foreground">Data Sources</p>
             <p className="text-sm text-muted-foreground">
-              Housing data sourced from Bank of Canada. Wages and education charts still use sample data for demonstration.
+              Housing data: Bank of Canada. CPI data: Statistics Canada. Wage and education charts still use placeholder data.
             </p>
           </div>
         </motion.div>
