@@ -232,7 +232,7 @@ export function DataPlayground() {
   const getChartDescription = () => {
     switch (activeTab) {
       case 'housing':
-        return 'Higher values indicate worse affordability. The index combines home prices and mortgage rates relative to median incomes.';
+        return 'The affordability index represents mortgage payments as a share of income. Higher values mean housing is less affordable. Source: Bank of Canada.';
       case 'wages':
         return 'The gap between the lines shows how purchasing power has eroded. When CPI rises faster than wages, real income falls.';
       case 'education':
