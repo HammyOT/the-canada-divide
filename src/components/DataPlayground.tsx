@@ -219,7 +219,7 @@ export function DataPlayground() {
   const getChartTitle = () => {
     switch (activeTab) {
       case 'housing':
-        return 'Housing Affordability Index (2005–2024)';
+        return 'Housing Affordability Index (1990–2025)';
       case 'wages':
         return 'Wage Growth vs Consumer Prices (2005–2024)';
       case 'education':
