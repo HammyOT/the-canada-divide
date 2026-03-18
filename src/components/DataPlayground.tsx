@@ -235,7 +235,7 @@ export function DataPlayground() {
       case 'housing':
         return 'The affordability index represents mortgage payments as a share of income. Higher values mean housing is less affordable. Source: Bank of Canada.';
       case 'wages':
-        return 'The gap between the lines shows how purchasing power has eroded. When CPI rises faster than wages, real income falls.';
+        return 'CPI data from Statistics Canada (Table 18-10-0006-01). Wage data is still placeholder. The gap shows how purchasing power has eroded.';
       case 'education':
         return 'Both tuition costs and total student debt have grown faster than inflation, increasing the burden on new graduates.';
       default:
