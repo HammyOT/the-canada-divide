@@ -222,7 +222,7 @@ export function DataPlayground() {
       case 'housing':
         return 'Housing Affordability Index (1990–2025)';
       case 'wages':
-        return 'Wage Growth vs Consumer Prices (2005–2024)';
+        return 'Wage Growth vs Consumer Prices (2001–2025)';
       case 'education':
         return 'Education Costs & Student Debt (2005–2024)';
       default:
