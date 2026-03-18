@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 import { SlideSection, SlideData } from '@/components/SlideSection';
 import { HeroSection } from '@/components/HeroSection';
-import { TableOfContents } from '@/components/TableOfContents';
+import { NewsNav } from '@/components/NewsNav';
 import { QuotesSection } from '@/components/QuotesSection';
-import { DataPlayground } from '@/components/DataPlayground';
 import { PolicyGrid } from '@/components/PolicyGrid';
 import { SourcesPanel } from '@/components/SourcesPanel';
 import { Footer } from '@/components/Footer';
 import { PhotoBreak } from '@/components/PhotoBreak';
+import { DataTable } from '@/components/DataTable';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import slidesDataRaw from '@/content/slides.json';
 
@@ -20,7 +20,6 @@ const slidesData = {
   slides: slidesDataRaw.slides as SlideData[],
 };
 
-// Photo breaks inserted after specific slide indices
 const photoBreaks: Record<number, { src: string; alt: string; caption: string; credit: string }> = {
   1: {
     src: photoHousing,
@@ -31,7 +30,7 @@ const photoBreaks: Record<number, { src: string; alt: string; caption: string; c
   3: {
     src: photoGroceries,
     alt: 'Grocery store aisle with price tags',
-    caption: 'The cost of essentials has outpaced wages for over a decade.',
+    caption: 'The cost of essentials has outpaced wages for much of the past decade.',
     credit: 'Photo: Placeholder',
   },
   4: {
@@ -42,56 +41,111 @@ const photoBreaks: Record<number, { src: string; alt: string; caption: string; c
   },
 };
 
+const homeownershipData = {
+  caption: 'Homeownership rate by age group, Canada',
+  source: 'Statistics Canada — National Household Survey (2011) and Census (2016, 2021)',
+  columns: ['Age group', '2011', '2016', '2021'],
+  rows: [
+    ['25–29', '44.1%', '39.6%', '36.5%'],
+    ['30–34', '59.2%', '55.0%', '52.3%'],
+    ['35–39', '67.1%', '63.5%', '61.5%'],
+    ['70–74', '75.5%', '75.8%', '74.8%'],
+  ],
+  highlight: [0, 1, 2],
+};
+
+const netWorthData = {
+  caption: 'Median net worth by age of major income recipient (constant 2023 dollars)',
+  source: 'Statistics Canada — Survey of Financial Security, 1999–2023',
+  columns: ['Age group', '1999', '2012', '2016', '2019', '2023'],
+  rows: [
+    ['Under 35', '$30,000', '$32,600', '$43,000', '$56,400', '$159,100'],
+    ['35–44', '$161,200', '$235,600', '$268,600', '$270,800', '$409,300'],
+    ['55–64', '$457,300', '$688,900', '$819,200', '$797,000', '$873,400'],
+  ],
+  highlight: [0],
+};
+
 const Index = () => {
-  const sectionIds = useMemo(() => 
-    slidesData.tableOfContents.map(item => item.id), 
+  const sectionIds = useMemo(() =>
+    slidesData.tableOfContents.map(item => item.id),
     []
   );
 
-  const { activeSection, scrollProgress, scrollToSection } = useScrollProgress({
-    sectionIds,
-  });
+  const { activeSection, scrollToSection } = useScrollProgress({ sectionIds });
 
   return (
-    <main className="relative bg-background min-h-screen custom-scrollbar">
-      <a 
-        href="#hook" 
+    <main className="relative bg-paper min-h-screen custom-scrollbar">
+      <a
+        href="#hook"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
       >
         Skip to main content
       </a>
 
-      <TableOfContents 
+      <NewsNav
         items={slidesData.tableOfContents}
         activeIndex={activeSection}
         onNavigate={scrollToSection}
       />
 
-      <article aria-label="Act 1: The Narrative">
-        <HeroSection title={slidesData.slides[0].title} id={slidesData.slides[0].id} />
-        {slidesData.slides.map((slide, index) => (
-          <div key={slide.id}>
-            <SlideSection slide={slide} index={index} />
-            {photoBreaks[index] && (
-              <PhotoBreak
-                src={photoBreaks[index].src}
-                alt={photoBreaks[index].alt}
-                caption={photoBreaks[index].caption}
-                credit={photoBreaks[index].credit}
-              />
-            )}
+      <HeroSection title={slidesData.slides[0].title} id={slidesData.slides[0].id} />
+
+      <div className="article-wrapper">
+        <div className="article-meta">
+          <p className="article-section-label">Special Report</p>
+          <h2 className="article-deck">
+            Across Canada, younger generations are entering adulthood facing housing prices far out of reach of their incomes, rising living costs, and higher student debt than previous cohorts. The data shows a structural divide—not a temporary blip.
+          </h2>
+          <div className="article-byline-row">
+            <span className="article-byline">By The Research Desk</span>
+            <span className="article-date">Updated March 2026</span>
           </div>
-        ))}
-      </article>
+          <div className="article-rule" />
+        </div>
 
-      <QuotesSection 
-        quotes={slidesData.quotes}
-        ethicsNote={slidesData.ethicsNote}
-      />
+        <article aria-label="Generational Inequality in Canada">
+          {slidesData.slides.map((slide, index) => (
+            <div key={slide.id}>
+              <SlideSection slide={slide} index={index} />
 
-      <article aria-label="Act 2: Explore the Data">
-        <DataPlayground />
-      </article>
+              {index === 1 && (
+                <DataTable
+                  caption={homeownershipData.caption}
+                  source={homeownershipData.source}
+                  columns={homeownershipData.columns}
+                  rows={homeownershipData.rows}
+                  highlightRows={homeownershipData.highlight}
+                />
+              )}
+
+              {index === 4 && (
+                <DataTable
+                  caption={netWorthData.caption}
+                  source={netWorthData.source}
+                  columns={netWorthData.columns}
+                  rows={netWorthData.rows}
+                  highlightRows={netWorthData.highlight}
+                />
+              )}
+
+              {photoBreaks[index] && (
+                <PhotoBreak
+                  src={photoBreaks[index].src}
+                  alt={photoBreaks[index].alt}
+                  caption={photoBreaks[index].caption}
+                  credit={photoBreaks[index].credit}
+                />
+              )}
+            </div>
+          ))}
+        </article>
+
+        <QuotesSection
+          quotes={slidesData.quotes}
+          ethicsNote={slidesData.ethicsNote}
+        />
+      </div>
 
       <PolicyGrid options={slidesData.policyOptions} />
       <SourcesPanel />

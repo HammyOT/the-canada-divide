@@ -13,40 +13,52 @@ export function HeroSection({ title, id }: HeroSectionProps) {
   return (
     <section
       id={id}
-      className="relative h-screen flex items-center justify-center overflow-hidden"
-      aria-labelledby={`slide-title-${id}`}
+      className="relative flex items-end justify-start overflow-hidden hero-section"
+      aria-labelledby={`hero-title-${id}`}
     >
-      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Downtown Toronto skyline with CN Tower at golden hour"
           className="w-full h-full object-cover"
         />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/50" />
-        {/* Bottom gradient fade into background */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 hero-overlay" />
       </div>
 
-      {/* Title */}
-      <motion.h1
-        id={`slide-title-${id}`}
-        initial={{ opacity: 0, y: reducedMotion ? 0 : 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: reducedMotion ? 0.1 : 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="relative z-10 text-display font-black text-white leading-none font-serif text-center px-6 max-w-4xl drop-shadow-lg"
-      >
-        {title}
-      </motion.h1>
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 pb-16 md:pb-24 pt-28">
+        <motion.p
+          initial={{ opacity: 0, y: reducedMotion ? 0 : 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reducedMotion ? 0.1 : 0.6 }}
+          className="hero-kicker"
+        >
+          Special Report
+        </motion.p>
+        <motion.h1
+          id={`hero-title-${id}`}
+          initial={{ opacity: 0, y: reducedMotion ? 0 : 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reducedMotion ? 0.1 : 0.8, delay: 0.1 }}
+          className="hero-title"
+        >
+          {title}
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: reducedMotion ? 0 : 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reducedMotion ? 0.1 : 0.7, delay: 0.25 }}
+          className="hero-subtitle"
+        >
+          Housing, wages, and wealth: how Canada's economic promise became conditional on when you were born.
+        </motion.p>
+      </div>
 
-      {/* Scroll hint */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         animate={reducedMotion ? {} : { y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="opacity-60">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="opacity-50">
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
       </motion.div>
