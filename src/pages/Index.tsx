@@ -140,11 +140,6 @@ const Index = () => {
             </div>
           ))}
         </article>
-
-        <QuotesSection
-          quotes={slidesData.quotes}
-          ethicsNote={slidesData.ethicsNote}
-        />
       </div>
 
       <DataPlayground />
