@@ -6,8 +6,20 @@
       "statLabel": "Homeownership at ages 25–29",
       "statValue": "36.5%",
       "statNote": "Down from 44.1% in 2011. Source: Statistics Canada (NHS/Census 2011–2021)",
-      "body": "For much of the twentieth century, Canada promised each generation that hard work would produce a better life than the one before. Stable employment, accessible housing, and affordable education formed the foundation of what many Canadians saw as a reliable social contract.\n\nFor many young Canadians, the basic milestones of adulthood are becoming harder to reach. Renting an apartment, saving for a down payment, building wealth, or paying off school costs now often feels less like a normal stage of life and more like a moving target. The evidence suggests this is not just a feeling. Across housing, wealth, wages, and education, younger Canadians are facing a different economic reality than older generations did at the same age\n\nThis generational divide is not simply the result of bad luck or individual choices. It is deeply connected to political decisions about housing policy, taxation, labour markets, and social supports. Understanding the roots of this divide requires examining how policy choices and economic structures have evolved over time.\n\nThe most rigorous way to measure this is to compare cohorts at the same life stage—homeownership among 30–34-year-olds in 2011 versus 2021, for instance. When you do, the picture is stark.",
+      "body": "For decades, the unspoken Canadian promise was simple: get a good education, work hard, save a portion of your paycheck, and you will eventually achieve financial security. But for younger Canadians today, doing everything \"right\" no longer guarantees that outcome. The path into adulthood hasn't just hit a speedbump; it has fundamentally changed.",
       "question": "If the country is richer, why does it feel harder?",
+      "backgroundType": "gradient",
+      "backgroundImage": null,
+      "theme": "noise"
+    },
+    {
+      "id": "define",
+      "title": "Define the Question",
+      "statLabel": "The right comparison",
+      "statValue": "30 vs. 30",
+      "statNote": "Fairness requires measuring 30-year-olds today against 30-year-olds a generation ago — not against today's 60-year-olds.",
+      "body": "When we talk about a \"generational divide,\" the conversation often gets derailed by misunderstandings. It is easy to look at a 60-year-old and a 30-year-old today and say, \"Of course the older person has more wealth — they've been working longer.\" But that is the wrong way to measure fairness.\n\nThe most accurate test of generational equality is not comparing young versus old in a single snapshot of time. It is comparing people at the exact same stage of life across different eras. We have to ask: what did life look like for a 30-year-old in 1995, compared to a 30-year-old today?\n\nWhen we look through this \"same age, different era\" lens, the data reveals a stark reality. Younger Canadians are not just delaying adulthood; the traditional milestones of economic security have been moved significantly further out of reach. At the centre of this shift is the very foundation of middle-class wealth: housing.",
+      "question": "What changed first: the housing ladder, or the rules around it?",
       "backgroundType": "gradient",
       "backgroundImage": null,
       "theme": "noise"
@@ -18,7 +30,7 @@
       "statLabel": "Homeownership at ages 30–34",
       "statValue": "52.3%",
       "statNote": "Down from 59.2% in 2011. Source: Statistics Canada (NHS/Census 2011–2021)",
-      "body": "Housing is at the centre of that divide. The research base describes it as the main "engine" turning price increases into long-term intergenerational gaps, because younger adults have seen homeownership fall at the exact ages when earlier cohorts were most likely to buy homes. Statistics Canada comparisons show that among Canadians aged 25 to 29, the homeownership rate fell from 44.1 percent in 2011 to 36.5 percent in 2021. For those aged 30 to 34, it dropped from 59.2 percent to 52.3 percent over the same period. Meanwhile, rates for older groups remained much higher, with Canadians aged 70 to 74 still around 74.8 percent in 2021.\n\nThis is not a lifecycle story. The oldest cohorts stayed put. The youngest fell behind—at the same ages where previous generations had already formed households, purchased homes, and begun accumulating equity.\n\nSeveral forces converged to produce this outcome. Housing supply in growing urban regions failed to keep pace with demand. Zoning regulations restricted higher-density development. Population growth and immigration increased demand. Low interest rates expanded borrowing capacity. And housing became increasingly treated as an investment asset rather than a place to live.\n\nIn cities such as Toronto and Vancouver, housing prices have grown several times faster than wages over the past two decades. Canada's overall homeownership rate was 66.5% in 2021—ranking 23rd among OECD countries, below the OECD average of 71.5%.",
+      "body": "At the exact same ages when earlier cohorts were buying their first homes, younger Canadians are increasingly locked out. The numbers show a clear and steady decline in young homeownership over the last decade. But crucially, this drop is not happening across the board.\n\nWhile homeownership rates for older demographics — like those aged 70–74 — have remained broadly stable and comfortably high, younger cohorts are losing ground. This proves that the decline isn't just a natural part of growing up, nor is it the result of younger people choosing different lifestyles.\n\nThe housing ladder itself has fundamentally transformed. The bottom rungs have been removed, creating a deep economic fault line. Today, housing heavily favours those who were lucky enough to be born early enough to buy in before prices detached from local incomes.\n\nAges 25–29: 44.1% (2011) → 36.5% (2021)\n\nAges 30–34: 59.2% (2011) → 52.3% (2021)\n\nAges 70–74: 75.5% (2011) → 74.8% (2021)",
       "question": "Did timing become destiny?",
       "backgroundType": "image",
       "backgroundImage": "/images/housing.jpg",
@@ -27,10 +39,10 @@
     {
       "id": "rent",
       "title": "Rent Took the Slack",
-      "statLabel": "Renters spending 30%+ of income on shelter",
+      "statLabel": "Share of renters spending 30%+ of income on shelter",
       "statValue": "33.0%",
       "statNote": "Compared to 16.1% for owners. Source: Statistics Canada, Canadian Housing Survey 2022",
-      "body": "Statistics Canada defines 'unaffordable housing' as spending 30% or more of household income on shelter costs. In 2022, 22.0% of all Canadian households met that definition. But the burden falls unevenly: renters (33.0%) are more than twice as likely as owners (16.1%) to face unaffordable shelter costs—a gap Statistics Canada describes as persistent over time.\n\nThe situation is compounded for those entering the rental market now. The Canadian Housing Survey reported that 'new renters' pay substantially higher rents than longer-tenure renters, reflecting the gap between rents locked in under existing leases and rents on newly available units.\n\nHigher rent leaves less room for saving, for schooling, and for starting a family. For many young Canadians, the question is not whether to rent or own—it is how long to rent before any path to ownership becomes conceivable.\n\nFirst-time homebuyers' median outstanding mortgage rose from $249,350 in 2018 to $280,000 in 2022—a 12% jump in just four years, in a period when incomes did not rise nearly as fast. The financial threshold to enter ownership keeps rising, making each year of renting simultaneously more expensive and less of a savings opportunity.",
+      "body": "A common argument is that if young people cannot buy, they can simply rent and save the difference. However, the data shows that renting is no longer a safe financial fallback. Younger adults are being pushed into a hyper-competitive rental market that consumes a massive, often unsustainable, share of their monthly income.\n\nWhen you spend more than 30% of your income on shelter, it forces difficult compromises on everyday essentials. More importantly, it cripples your ability to save. Renting today delays wealth-building twice over: it drains your current cash flow, and it prevents you from building the down payment required to escape the rental cycle.\n\nWith first-time buyers now facing a median outstanding mortgage of $280,000, trying to save for a home while paying modern rental prices is like trying to fill a bathtub with the drain wide open. For many, major life milestones — like getting married, moving out, or having children — are put on indefinite hold.",
       "question": "What does adult life cost now?",
       "backgroundType": "gradient",
       "backgroundImage": null,
@@ -42,8 +54,8 @@
       "statLabel": "Real median hourly wage growth, 1981–2024",
       "statValue": "+20%",
       "statNote": "Full-time jobs: +24%. Part-time jobs: +6%. Source: Statistics Canada Labour Force Survey",
-      "body": "Statistics Canada reports that from 1981 to 2024, median real hourly wages grew 20% overall—roughly 0.5% per year in inflation-adjusted terms. That is modest, but it exists. The more important story is in the distribution.\n\nFrom 1981 to 1998, wage growth for 25–34-year-olds lagged 45–54-year-olds by roughly 20 percentage points. From 1998 to 2024, 25–34-year-olds partially recovered, with about 5 percentage points faster growth than the older group—but that recovery barely offsets the earlier divergence.\n\nYouth unemployment tells another part of the story. Recent Labour Force Survey releases show youth unemployment spiking in 2025 and remaining elevated into early 2026 relative to other age groups. Job quality matters too: Statistics Canada's 'Quality of Employment' reporting documents long-run trends in involuntary part-time work from 1997 to 2022, showing that the problem is not only job quantity but job stability and earnings reliability.\n\nEven small wage gaps compound over time: essentials rise, paychecks lag, and the savings required to cross the threshold into homeownership keep receding. For workers who entered the labour market after 2000 in major urban centres—precisely the cohort that faced housing price acceleration—the timing has been doubly difficult.",
-      "question": "Is this a temporary spike—or the new baseline?",
+      "body": "When younger generations voice their frustration, they are often met with a simple piece of advice: \"Just earn more.\" But this ignores the mathematical reality of the modern Canadian economy.\n\nIt is true that wages have risen over the last four decades. Full-time jobs have seen a 24% increase in real wages, and part-time jobs are up 6%. Paychecks are technically bigger than they were in the 1980s. However, this modest wage growth has been entirely overshadowed by the exploding costs of the things that actually matter for building a life.\n\nThe problem isn't that young people aren't making money; it's that the purchasing power of their paychecks regarding housing and basic living costs has collapsed. They are working just as hard — if not harder — in a more educated, more productive economy, yet their pay simply hasn't kept pace with the towering financial barriers in front of them.",
+      "question": "Is this a temporary spike, or the new baseline?",
       "backgroundType": "image",
       "backgroundImage": "/images/grocery.jpg",
       "theme": "overlay"
@@ -54,7 +66,7 @@
       "statLabel": "Average tuition, full-time Canadian undergraduates",
       "statValue": "$6,834",
       "statNote": "2022/2023. Projected $7,734 for 2025/2026. Source: Statistics Canada",
-      "body": "Statistics Canada reports average tuition for full-time Canadian undergraduates at $6,834 in 2022/2023, with projections reaching $7,734 for 2025/2026. The trend line in real (inflation-adjusted) terms shows tuition climbing faster than consumer prices across most of the past three decades.\n\nFor student debt, official data offers two complementary windows: debt at graduation (tracked every five years through the National Graduates Survey) and the stock of outstanding student loans within household balance sheets (tracked through the Survey of Financial Security). Together they paint a picture of young adults entering the housing market and family formation years already carrying significant financial obligations.\n\nOne notable policy shift: the federal government permanently eliminated interest on Canada Student Loans effective April 1, 2023. This reduces the ongoing repayment burden for federally-held debt—but does not change the principal balances, does not address provincial loan portions or private borrowing, and does not reduce the broader affordability constraints facing young adults.\n\nFor many, adulthood begins with five figures of debt. Delayed milestones—moving out, family formation, regional mobility—follow naturally. The connection to the housing story is direct: student debt reduces the savings capacity needed for down payments, and the years spent repaying debt are years not spent accumulating equity.",
+      "body": "Post-secondary education has long been sold as the great equalizer and the most reliable ticket to a good career. While a degree still matters deeply in the modern job market, it increasingly comes with an upfront cost that squeezes young adults before their wealth-building years even begin.\n\nPrevious generations could often pay for a year of university with savings from a summer job. Today, that mathematical equation is broken. Tuition has climbed significantly faster than inflation across decades. While the permanent elimination of federal student loan interest in 2023 was a positive step that helped ease monthly cash flows, it didn't solve the root issue.\n\nYoung workers are entering the economy saddled with massive principal balances while simultaneously navigating historic living-cost pressures. Adult life simply begins with a heavier financial anchor than it ever has before.",
       "question": "What happens when the first step costs more?",
       "backgroundType": "gradient",
       "backgroundImage": null,
@@ -66,7 +78,7 @@
       "statLabel": "Median net worth, under-35 households (2023)",
       "statValue": "$159,100",
       "statNote": "Up from $30,000 in 1999, but still far below the 55–64 cohort at $873,400. Source: Statistics Canada Survey of Financial Security, constant 2023 dollars",
-      "body": "The Survey of Financial Security provides an unusually strong long-run view of median net worth by age, reported in constant 2023 dollars. In 1999, the median net worth of a household with a major income recipient under 35 was $30,000. By 2023, that had risen to $159,100—a dramatic percentage gain, driven largely by asset price movements including housing.\n\nBut the absolute comparison tells a different story. The 55–64 age group held median net worth of $873,400 in 2023, compared to $457,300 in 1999. The 35–44 group went from $161,200 to $409,300. The gap between age groups did not close; in many respects it widened.\n\nInterpretation requires care. Net worth is strongly lifecycle-driven—older households typically have higher wealth because they have had more years to accumulate it. The most rigorous generational claims compare cohorts at the same age across different calendar periods. When you do that for Canadian data, the evidence consistently shows that younger cohorts have faced steeper entry barriers to wealth accumulation than older cohorts did at the same age.\n\nA particularly striking finding from Statistics Canada: people born in the 1990s whose parents were homeowners were about twice as likely to own in 2021 as those whose parents were not homeowners. Parental multiple-property ownership is associated with even higher relative likelihoods. The divide is not only 'young vs old'—it is 'young with family assets vs young without.'",
+      "body": "The compounding result of expensive housing, high rent, and debt is a drastically widening wealth gap. Wealth naturally rises with age as people pay down mortgages and invest, but the chasm between today's generations is unprecedented.\n\nConsider this: the median net worth for households aged 55–64 surged from $457,300 in 1999 to a staggering $873,400 in 2023. Over that same period, the under-35 demographic has seen only a fraction of that growth, largely remaining stuck.\n\nThe issue is not simply that older people are older. It is that older cohorts benefited from a massive inflation of their housing assets, while younger cohorts are operating in an economy where those exact same assets act as a barricade. Younger Canadians face steeper barriers to building wealth at the exact same life stage as their predecessors.",
       "question": "Is the wealth ladder being pulled up?",
       "backgroundType": "gradient",
       "backgroundImage": null,
@@ -76,9 +88,9 @@
       "id": "policy",
       "title": "Policy Created Feedback Loops",
       "statLabel": "CMHC housing supply gap estimate by 2030",
-      "statValue": "3.5 million units",
+      "statValue": "3.5 Million Units",
       "statNote": "The Parliamentary Budget Officer estimates a lower figure of 1.3 million. Source: CMHC 2022; PBO 2024",
-      "body": "The causal picture behind generational inequality in Canada involves several overlapping mechanisms—and competing explanations worth presenting honestly.\n\nThe supply-driven frame holds that restoring affordability requires a major increase in housing construction. CMHC's 2022 work projected an additional 3.5 million units by 2030 to restore affordability, with later updates suggesting annual housing starts would need to nearly double—to roughly 430,000 to 480,000 units per year over the next decade. The Parliamentary Budget Officer has explicitly contrasted this figure with its own lower estimate of 1.3 million, attributing the difference to definitions of the affordability target being used.\n\nThe demand and finance frame connects monetary policy to housing outcomes. The Bank of Canada publishes a housing affordability index defined as housing-related costs relative to average household disposable income, and its research shows how mortgage rate changes affect both house prices and rents—linking the post-2020 rate cycle directly to household affordability pressures.\n\nThe financialization channel focuses on investor ownership. Statistics Canada reports that in downtown census tracts with many condominiums, roughly half of condos were rented by investors in 2020 and 2021. Policy debates increasingly ask whether supply increases alone are sufficient, or whether investor demand creates a floor on prices that new construction cannot overcome.\n\nOnce a policy creates winners, those winners gain influence—making the system harder to change. Housing policy sits across federal, provincial, and municipal jurisdictions, often misaligned. If responsibility is shared, accountability diffuses.",
+      "body": "How did we get here? No single villain or isolated cause explains this generational divide. It is the result of decades of overlapping policy choices, fragmented government decisions, and systemic changes in how we treat real estate.\n\nSupply is a massive piece of the puzzle. We simply have not built enough homes for our growing population, with estimates suggesting we need up to 480,000 new housing starts annually over the next decade. But building alone won't fix everything. Interest rates, mortgage rules, and the financialization of housing all play a role.\n\nWhen roughly half of the condos in highly-dense downtown areas are scooped up by investors to be rented out for profit, it complicates the market for first-time buyers. Shared jurisdiction between federal, provincial, and municipal governments has created a system where accountability is easily passed around, while the crisis compounds.",
       "question": "Can a policy ever truly be reversed?",
       "backgroundType": "gradient",
       "backgroundImage": null,
@@ -90,8 +102,20 @@
       "statLabel": "Absolute intergenerational income mobility (Canada, birth cohort 1985)",
       "statValue": "57%",
       "statNote": "Share of adult children whose income at age 30 exceeded their parents' at the same age. Source: Statistics Canada synthesis of mobility research",
-      "body": "A Statistics Canada synthesis of recent mobility research defines absolute intergenerational income mobility as the share of adult children whose income is higher than their parents' income at the same age. For adult children born in 1985, the estimated mobility rate at age 30 was 57% in Canada—meaning roughly 4 in 10 Canadians born that year earned less at 30 than their parents had at the same age.\n\nFor context: the United States reported 50% for comparable cohorts; the United Kingdom 65%; Norway 74%; Finland 57%. Canada sits in the middle of this range, though the research also flags that relative mobility—the persistence of income rank across generations—may have been declining in earlier work.\n\nThe intergenerational transfer channel matters enormously for how inequality compounds. Parental homeownership is strongly associated with young adult homeownership outcomes. Those born in the 1990s whose parents were homeowners were twice as likely to own in 2021 as those whose parents rented. When the primary asset of older generations appreciates rapidly, the wealth transfer to the next generation—through gifts, inheritances, and co-signed mortgages—becomes a significant determinant of who can participate in ownership.\n\nThis means the generational divide is not only 'Millennials vs Boomers.' It is 'young people with asset-holding parents vs young people without.' Within-generation inequality can dominate: family wealth, immigration pathway, and region of residence can all outweigh the generation label.",
+      "body": "This data forces us to ask a difficult, foundational question: does Canada still deliver upward mobility? For decades, the promise was that your origins did not dictate your outcomes. But that promise is fracturing.\n\nToday, roughly 4 in 10 Canadians born in 1985 earned less at age 30 than their parents did at the exact same age. Furthermore, family wealth increasingly dictates who gets ahead. Young adults born in the 1990s whose parents were homeowners were about twice as likely to own homes themselves in 2021.\n\nWe are shifting toward an economy where access to the \"Bank of Mom and Dad\" is the primary determinant of whether a young person can achieve economic security. When hard work is outpaced by inheritance and family timing, the basic social contract is broken.",
       "question": "Is Canada still a country where origins do not determine outcomes?",
+      "backgroundType": "gradient",
+      "backgroundImage": null,
+      "theme": "noise"
+    },
+    {
+      "id": "conclusion",
+      "title": "The Canada Divide Is a Political Choice",
+      "statLabel": "Median net worth gap: ages 55–64 vs. under-35",
+      "statValue": "5.5×",
+      "statNote": "$873,400 vs. $159,100 in 2023. Source: Statistics Canada Survey of Financial Security",
+      "body": "Generational inequality is not a natural disaster. It is not random, nor is it inevitable. It is the direct reflection of deliberate choices we have made over decades regarding housing, work, education, and what kinds of wealth our society chooses to protect.\n\nOver the last ten years, housing became the definitive hinge issue of Canadian life. The rental market failed to provide a safe harbour, while stagnant purchasing power and rising education costs made entering adulthood demonstrably harder than it was a generation ago. Today, economic security increasingly depends on exactly when you were born and what assets your family holds, rather than just your own labour.\n\nBut because this divide was created by policy, it can be corrected by policy. It will require treating the struggles of younger Canadians not as personal failings, but as the structural economic crisis the data proves them to be.\n\nA fair society does not make opportunity depend on whether you arrived before the ladder was pulled up.",
+      "question": "What kind of Canada comes next?",
       "backgroundType": "gradient",
       "backgroundImage": null,
       "theme": "noise"
@@ -99,6 +123,7 @@
   ],
   "tableOfContents": [
     { "id": "hook", "label": "The Divide" },
+    { "id": "define", "label": "Define" },
     { "id": "housing", "label": "Housing" },
     { "id": "rent", "label": "Rent" },
     { "id": "wages", "label": "Wages" },
@@ -106,6 +131,7 @@
     { "id": "wealth", "label": "Wealth" },
     { "id": "policy", "label": "Policy" },
     { "id": "mobility", "label": "Mobility" },
+    { "id": "conclusion", "label": "Conclusion" },
     { "id": "data-playground", "label": "Data" },
     { "id": "policy-options", "label": "Options" }
   ],
@@ -158,32 +184,32 @@
     {
       "id": "supply",
       "title": "Accelerate Housing Supply",
-      "description": "Zoning reform, approvals streamlining, and infrastructure finance to enable the 430,000–480,000 annual starts CMHC estimates are needed.",
+      "description": "Targets the raw physical shortage of units through zoning reform and construction incentives — aiming for the 430,000–480,000 annual starts CMHC says are needed.",
       "tradeoff": "Long construction lags; local political resistance; regional mismatch if supply appears where demand is weakest."
     },
     {
       "id": "non-market",
       "title": "Scale Deeply Affordable Housing",
-      "description": "Directly fund non-market and social housing to serve renters and low-income households that the private market will not reach.",
+      "description": "Targets those completely priced out of the private market by directly funding non-market and cooperative housing as shelter, not investment.",
       "tradeoff": "Requires sustained public funding and delivery capacity; can be slow without existing land and building pipelines."
     },
     {
       "id": "anti-financialization",
       "title": "Anti-Financialization Measures",
-      "description": "Data collection, taxes, and rules on investor activity to reduce 'housing as asset' dynamics alongside supply increases.",
+      "description": "Targets investor demand and speculation to ensure homes are treated as shelter first — not just stock portfolios — alongside supply increases.",
       "tradeoff": "Design complexity; may have unintended effects on rental supply if applied bluntly; enforcement and data needs are significant."
     },
     {
       "id": "income-supports",
       "title": "Income and Wage Supports",
-      "description": "Strengthen income-side interventions—wage floors, rent assistance, housing benefits—to address affordability directly for renters.",
+      "description": "Targets the gap between earning power and living costs — wage floors, rent assistance, housing benefits — ensuring work pays enough to actually live on.",
       "tradeoff": "High fiscal cost; debates over targeting effectiveness; wage growth alone may not catch up to asset price appreciation."
     },
     {
       "id": "education-costs",
       "title": "Reduce Education Cost Burden",
-      "description": "Extend interest elimination on student loans, control tuition growth, and reduce the debt load young adults carry into adulthood.",
-      "tradeoff": "Does not solve housing supply; tuition is only one part of total cost of living through post-secondary education."
+      "description": "Targets the debt load carried into early adulthood, freeing up capital for young workers to invest in their futures rather than service old balances.",
+      "tradeoff": "Does not solve housing supply; tuition is only one part of the total cost of living through post-secondary education."
     }
   ]
 }
