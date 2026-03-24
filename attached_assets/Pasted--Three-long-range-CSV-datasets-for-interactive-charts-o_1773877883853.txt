@@ -1,0 +1,482 @@
+# Three long-range CSV datasets for interactive charts on Canada’s generational divide
+
+## Executive summary
+
+This report specifies three chart-ready CSV datasets (1990–present where feasible) designed to make **generational divergence** visible in interactive scrollytelling: **housing affordability**, **wages vs prices**, and **education costs & student debt**. Each dataset is built from **primary Canadian sources** (or the closest available official alternative) and comes with (1) a tidy CSV schema suitable for charting libraries, (2) exact source tables/series IDs and citation lines, (3) reproducible transformation steps including **inflation adjustment to 2023 dollars**, (4) a concise data-quality note, (5) recommended chart types + mock captions, and (6) a 10-row CSV preview snippet.
+
+A key methodological choice throughout is to show the generational divide using **“same-age, different-year”** comparisons: e.g., *25–34-year-olds in 1990* vs *25–34-year-olds today* represent very different birth cohorts, which allows you to visualize how the economic “starting line” has shifted. The report includes a standard **cohort mapping** (Gen Z + Millennials vs Gen X + Boomers) you can apply consistently across all three datasets.
+
+These datasets are intentionally aligned to plug into the “chart slots” and claims structure you’re building for your scrollytelling piece (as suggested in your working draft). fileciteturn0file0
+
+## Source timeline
+
+```mermaid
+timeline
+  title Primary-source coverage for the three CSV datasets
+  1981 : New Housing Price Index (NHPI) monthly time series available (national + CMAs)
+  1990 : Suggested main start for generational-divide visuals
+  1990 : Bank of Canada housing affordability index available (quarterly series)
+  2000 : Student debt at graduation series available at 5-year intervals (NGS-based tables)
+  2006 : Tuition (current series) overlaps with historical series for stitching
+  2024 : Real wage index and affordability series extend through 2024 (some inputs end earlier)
+```
+
+NHPI has monthly data dating back to the early 1980s, making it viable for “long-run” housing visuals. citeturn30search3 Student debt series in official tables are typically **every 5 years**, which is still usable for interactive scrollytelling (as dots/steps rather than a smooth annual line). citeturn22view0
+
+## Dataset A housing affordability and price-to-income gap
+
+### Purpose and story use
+
+This dataset supports two complementary housing narratives:
+
+1) **Affordability pressure over time** using the central bank’s **housing affordability index** (share of disposable income required, based on typical mortgage terms). citeturn1view1turn46search0  
+2) **Price-to-income gap by age** using an official housing price index (NHPI) and age-specific income series, converted into a single “gap index” that tells you whether housing prices have outpaced incomes for “young adult” vs “mid-career” groups.
+
+NHPI is an official index of contractors’ selling prices for **new** houses (not resale), with national, provincial, and CMA coverage (including **Toronto** and **Vancouver** CMAs). citeturn30search3
+
+### Frequency, coverage, units
+
+- **Frequency:** Quarterly recommended (because the affordability index is quarterly). NHPI is monthly → convert to quarterly average. citeturn1view1turn33view0  
+- **Coverage:** 1990Q1–2024Q4 (affordability series extends; some income components may end earlier depending on the selected income table’s latest year). citeturn46search0turn5view1  
+- **Geography:** Canada + one CMA (recommended: Toronto CMA; optionally add Vancouver CMA). citeturn30search3turn5view1  
+- **Units:** 
+  - `boc_hai` = ratio (share of disposable income; e.g., 0.50 = 50%). citeturn1view1turn46search0  
+  - `nhpi` = index (official NHPI base period shown in the table, and re-indexed to 1990=100 for comparability). citeturn30search3  
+  - `income_nominal_cad` / `income_real_2023_cad` = dollars and constant dollars (CPI-adjusted). citeturn5view1turn33view1  
+  - `pti_gap_index_1990_100` = dimensionless index (100 in 1990; >100 means house prices rose faster than incomes).
+
+### CSV schema
+
+**Filename (recommended):** `canada_generational_housing_affordability_1990_present_q.csv`
+
+| Column | Type | Example | Definition |
+|---|---|---:|---|
+| `period` | string | `1991-Q3` | Quarter label |
+| `geo` | string | `Canada` / `Toronto CMA` | Geography |
+| `age_group` | string | `25-34` / `35-44` / `45-54` / `all` | Age group; `all` where not age-specific |
+| `metric` | string | `boc_hai` / `nhpi` / `income_real_2023_cad` / `pti_gap_index_1990_100` | Metric name |
+| `value` | number | `0.449` | Value in metric units |
+| `unit` | string | `share` / `index` / `CAD_2023` | Unit |
+| `source_id` | string | `INDINF_AFFORD_Q` / `18-10-0205-01` / `11-10-0239-01` | Source series/table |
+| `notes` | string | `NHPI quarterly avg` | Transform note (optional) |
+
+### Primary sources, IDs, and download links
+
+The dataset is assembled from these primary sources:
+
+- Central bank **housing affordability index** (quarterly) series `INDINF_AFFORD_Q`, defined as the share of disposable income needed for typical ownership costs under standard assumptions (mortgage rate, 25-year amortization, down payment, etc.). citeturn1view1turn46search0  
+- NHPI monthly table **18-10-0205-01** (CMA-capable official housing price index). citeturn30search3turn33view0  
+- Income by age group and selected CMAs table **11-10-0239-01**. citeturn5view1turn20search2  
+- CPI annual average table **18-10-0005-01** for inflation adjustment to 2023 dollars. citeturn33view1turn16search0  
+
+Download links (place in your repo as “data sources” references):
+
+```text
+Bank of Canada (Valet) affordability series (CSV):
+https://www.bankofcanada.ca/valet/observations/INDINF_AFFORD_Q/csv
+
+Statistics Canada NHPI full table (ZIP via Full Table Download pattern):
+https://www150.statcan.gc.ca/n1/tbl/csv/18100205-eng.zip
+
+Statistics Canada income table full download:
+https://www150.statcan.gc.ca/n1/tbl/csv/11100239-eng.zip
+
+Statistics Canada CPI annual average full download:
+https://www150.statcan.gc.ca/n1/tbl/csv/18100005-eng.zip
+```
+
+The “Full Table Download” ZIP pattern is part of the official developer guidance for retrieving complete tables. citeturn14view1turn33view0turn33view1
+
+Suggested citation lines for your methodology or figure notes:
+
+- Housing affordability index: “Bank of Canada. Housing affordability index (series `INDINF_AFFORD_Q`) via Valet API.” citeturn1view1turn38search5  
+- NHPI: “Statistics Canada. Table 18-10-0205-01, New housing price index, monthly. DOI: 10.25318/1810020501-eng.” citeturn33view0  
+- Income: “Statistics Canada. Table 11-10-0239-01, Income of individuals by age group… DOI: 10.25318/1110023901-eng.” citeturn5view1  
+- CPI: “Statistics Canada. Table 18-10-0005-01, CPI annual average. DOI: 10.25318/1810000501-eng.” citeturn33view1  
+
+### Reproducible transformation steps and pseudo-code
+
+Key logic: NHPI is an index, while incomes are in dollars; to produce a clean **price-to-income gap** measure you (a) inflate-adjust income, (b) re-index both series to 1990=100, then (c) compute the ratio of indexes.
+
+```text
+INPUTS
+- boc_hai_q: series INDINF_AFFORD_Q (quarterly)
+- nhpi_m: StatCan 18-10-0205-01 (monthly), select Total (house+land), geos: Canada, Toronto CMA (optional Vancouver CMA)
+- income_y: StatCan 11-10-0239-01 (annual), select:
+    * sex = both sexes
+    * age_groups = 25-34, 35-44, 45-54
+    * metric = average income (excluding zeros) [or your chosen consistent income statistic]
+    * income_source = wages and salaries (or total income; document your choice)
+    * geos = Canada, Toronto CMA (optional Vancouver CMA)
+- cpi_y: StatCan 18-10-0005-01 (annual), all-items, Canada
+
+STEP 1: DATE STANDARDIZATION
+- Convert nhpi monthly dates to quarter labels; aggregate to quarterly average (mean).
+- Convert income annual year to quarters by carrying the annual value across 4 quarters
+  (or linear interpolation; set a flag "income_interpolated=true" if you interpolate).
+
+STEP 2: INFLATION ADJUSTMENT (CPI base year 2023)
+- For each year y, compute deflator_y = CPI_2023 / CPI_y
+- income_real_2023 = income_nominal * deflator_y
+
+STEP 3: RE-INDEX TO 1990=100
+- nhpi_index_1990 = nhpi / nhpi_value_at_1990Q1 * 100   (or 1990 annual avg if annual)
+- income_index_1990 = income_real_2023 / income_real_2023_at_1990 * 100
+
+STEP 4: PRICE-TO-INCOME GAP INDEX
+- pti_gap_index_1990_100 = (nhpi_index_1990 / income_index_1990) * 100
+
+STEP 5: OUTPUT TIDY CSV
+- Stack into long form rows with columns:
+  (period, geo, age_group, metric, value, unit, source_id, notes)
+```
+
+This approach preserves interpretability: a rising `pti_gap_index_1990_100` means prices have outpaced incomes since 1990 for that age group and geography.
+
+### Data-quality note
+
+- NHPI measures **new home** selling prices (contractors), not resale; results can diverge from resale-based measures in some cycles. citeturn33view0turn30search3  
+- The affordability index relies on model assumptions (mortgage terms and typical down payment among others), so it is best interpreted as a consistent **benchmark** rather than a household-specific experience. citeturn1view1turn46search0  
+- Income by age group for CMAs depends on the underlying income survey series over time (survey/program changes are a known source of comparability issues in long-run income tables). citeturn30search1turn5view1  
+- Quarterly “income” values are either carried forward from annual or interpolated; annotate this clearly in the CSV.
+
+### Suggested chart type and mock caption
+
+- **Chart type:**  
+  - Panel 1: Line for `boc_hai` (Canada, quarterly)  
+  - Panel 2: Lines for `pti_gap_index_1990_100` by age group, for Toronto CMA (and/or Canada)
+
+- **Mock caption:**  
+  “Housing affordability in Canada has tightened since the early 1990s. In Toronto, housing prices (NHPI) have outpaced the incomes of young adults (25–34) more than mid-career groups, widening the ‘starting-line’ gap for newer generations.”
+
+### 10-row CSV preview snippet
+
+Below is a **real** 10-row excerpt for the affordability series (Canada, quarterly) to demonstrate formatting. Values are from the central bank’s published affordability series. citeturn26search1turn46search0
+
+```csv
+period,geo,age_group,metric,value,unit,source_id,notes
+1990-Q1,Canada,all,boc_hai,0.497,share,INDINF_AFFORD_Q,as-published
+1990-Q2,Canada,all,boc_hai,0.546,share,INDINF_AFFORD_Q,as-published
+1990-Q3,Canada,all,boc_hai,0.512,share,INDINF_AFFORD_Q,as-published
+1990-Q4,Canada,all,boc_hai,0.484,share,INDINF_AFFORD_Q,as-published
+1991-Q1,Canada,all,boc_hai,0.449,share,INDINF_AFFORD_Q,as-published
+1991-Q2,Canada,all,boc_hai,0.450,share,INDINF_AFFORD_Q,as-published
+1991-Q3,Canada,all,boc_hai,0.449,share,INDINF_AFFORD_Q,as-published
+1991-Q4,Canada,all,boc_hai,0.409,share,INDINF_AFFORD_Q,as-published
+1992-Q1,Canada,all,boc_hai,0.399,share,INDINF_AFFORD_Q,as-published
+1992-Q2,Canada,all,boc_hai,0.395,share,INDINF_AFFORD_Q,as-published
+```
+
+## Dataset B real wage growth versus consumer prices by age
+
+### Purpose and story use
+
+This dataset is designed for a classic generational-divide visual: **prices rise steadily**, while **real wage growth is uneven across age groups**. It also supports “same-age, different cohort” comparisons (e.g., 25–34-year-olds in the early 1990s vs 25–34-year-olds today).
+
+The backbone of the wage series here is a long-run **real hourly wage index** by age group published in an official analytical product, with explicit notes about interpolation for some early years and the underlying survey sources. citeturn8view0
+
+### Frequency, coverage, units
+
+- **Frequency:** Annual (1990–2024). citeturn8view0  
+- **Age groups:** 25–34, 35–44, 45–54 (and optionally 17–24 for context). citeturn8view0  
+- **Unit:** Index values (1990=100 recommended for your visuals), plus CPI index (1990=100). CPI base-year conversions to 2023 are handled via the shared deflator recipe. citeturn33view1turn8view0  
+
+### CSV schema
+
+**Filename (recommended):** `canada_real_wages_vs_cpi_by_age_1990_2024_a.csv`
+
+| Column | Type | Example | Definition |
+|---|---|---:|---|
+| `year` | int | `1994` | Year |
+| `age_group` | string | `25-34` | Age band |
+| `sex` | string | `men` / `women` | Sex (keep for transparency; you can aggregate later) |
+| `real_wage_index_1990_100` | number | `96.07` | Real wage index re-based to 1990=100 |
+| `real_wage_source_index_base` | string | `1981=100` | Original base used in source table |
+| `cpi_index_1990_100` | number | (computed) | CPI index re-based to 1990=100 |
+| `cohort_bucket` | string | `older` / `younger` / `mixed` | Cohort mapping from birth years implied by age+year |
+| `birth_year_range` | string | `1960–1969` | Derived (year-age_max … year-age_min) |
+| `source_id_wage` | string | `11-631-x2025003` | Source publication ID |
+| `source_id_cpi` | string | `18-10-0005-01` | CPI source table |
+
+### Primary sources and download links
+
+- Wage index by age group: official analytical table embedded in “Wages in Canada, 1981 to 2024,” including age-group indices and methodology notes. citeturn8view0  
+- CPI: official CPI annual average table 18-10-0005-01 for deflation and CPI indexing. citeturn33view1turn16search0  
+
+```text
+Wage index source (HTML with embedded data tables):
+https://www150.statcan.gc.ca/n1/pub/11-631-x/11-631-x2025003-eng.htm
+
+CPI annual average full table download:
+https://www150.statcan.gc.ca/n1/tbl/csv/18100005-eng.zip
+```
+
+### Reproducible transformation steps and pseudo-code
+
+```text
+INPUTS
+- wage_index_age_sex_y: from the embedded "Data table for chart 2" (men) and "chart 3" (women)
+  * select age groups: 25-34, 35-44, 45-54
+  * use years 1990..2024
+- cpi_y: StatCan 18-10-0005-01 all-items, Canada (annual)
+
+STEP 1: EXTRACT WAGE TABLES
+- Parse the HTML page and extract the chart tables into a tidy structure:
+  (year, age_group, sex, real_wage_index_1981_100)
+
+STEP 2: RE-INDEX REAL WAGES TO 1990=100
+- For each (age_group, sex):
+    real_wage_index_1990 = (real_wage_index_1981 / value_in_1990) * 100
+
+STEP 3: CPI SERIES (TWO OUTPUTS)
+- CPI_1990_index: cpi_index_1990 = (CPI_y / CPI_1990) * 100
+- CPI_2023_deflator: deflator_y = CPI_2023 / CPI_y  (for converting nominal → 2023 dollars elsewhere)
+
+STEP 4: COHORT MAPPING (SAME-AGE CROSS-YEAR)
+- birth_year_min = year - age_max
+- birth_year_max = year - age_min
+- Map birth years to cohort labels:
+    Boomers: 1946–1964
+    Gen X:   1965–1980
+    Millennials: 1981–1996
+    Gen Z:   1997–2012
+- cohort_bucket:
+    younger = Millennials + Gen Z
+    older   = Boomers + Gen X
+    mixed   = otherwise (range spans both)
+```
+
+The wage publication explicitly notes that certain early-year values are interpolations and documents its survey lineage over time, which should be included in your methodology footer if you scrape/republish the index. citeturn8view0
+
+### Data-quality note
+
+- The wage series is a **real wage index** (already inflation-adjusted) and includes explicitly stated interpolations for some early years; it is best treated as a consistent long-run indicator rather than a direct replacement for microdata-based median wage series. citeturn8view0  
+- When charting “real wage index” beside “CPI index,” clarify that CPI is presented as a **price-level index**, while the wage index reflects **purchasing power** (already deflated); the point of the combined view is narrative contrast, not arithmetic equivalence.
+
+### Suggested chart type and mock caption
+
+- **Chart type:**  
+  Multi-line (small-multiple recommended): for each age group, plot `real_wage_index_1990_100` (men/women as toggle) and `cpi_index_1990_100` (single comparator line).
+
+- **Mock caption:**  
+  “Since 1990, consumer prices rose steadily. Real hourly wages (purchasing power) for younger adults did not consistently outpace inflation, contributing to a widening gap in what the same-age adult can afford across generations.”
+
+### 10-row CSV preview snippet
+
+The following 10 rows are computed directly from the published wage index table (men, age 25–34), rebased to 1990=100. citeturn8view0
+
+```csv
+year,age_group,sex,real_wage_source_index_base,real_wage_index_1990_100,source_id_wage
+1990,25-34,men,1981=100,100.00,11-631-x2025003
+1991,25-34,men,1981=100,99.04,11-631-x2025003
+1992,25-34,men,1981=100,98.09,11-631-x2025003
+1993,25-34,men,1981=100,97.13,11-631-x2025003
+1994,25-34,men,1981=100,96.07,11-631-x2025003
+1995,25-34,men,1981=100,95.12,11-631-x2025003
+1996,25-34,men,1981=100,94.16,11-631-x2025003
+1997,25-34,men,1981=100,93.21,11-631-x2025003
+1998,25-34,men,1981=100,94.59,11-631-x2025003
+1999,25-34,men,1981=100,95.01,11-631-x2025003
+```
+
+## Dataset C education costs and student debt
+
+### Purpose and story use
+
+This dataset links two dynamics that are central to generational inequality narratives:
+
+- **Education sticker price** (tuition fees) rising over decades, inflation-adjusted to show real growth.  
+- **Debt burden at graduation**, available in official tables at **five-year intervals**, suitable for a scrollytelling dot/step overlay.
+
+A crucial technical detail: tuition series requires **stitching** an archived historical table (through 2006/2007) with the current table (from 2006/2007 onward). citeturn22view1turn23view0
+
+### Frequency, coverage, units
+
+- **Tuition:** Annual by academic year; recommended coverage is **1990/1991 through 2024/2025** by stitching the two official tables. citeturn23view0turn22view1  
+- **Student debt:** Every 5 years (official table shows reference periods 2000, 2005, 2010, 2015, 2020). citeturn22view0  
+- **Inflation base:** Convert tuition and debt values to **2023 CAD** using CPI annual average. citeturn33view1turn16search0  
+
+### CSV schema
+
+**Filename (recommended):** `canada_tuition_and_student_debt_1990_present_a.csv`
+
+| Column | Type | Example | Definition |
+|---|---|---:|---|
+| `academic_year_start` | int | `1990` | Start year of academic year (1990/1991 → 1990) |
+| `academic_year_label` | string | `1990/1991` | Academic year label |
+| `geo` | string | `Canada` | Geography (extendable to provinces) |
+| `metric` | string | `tuition_nominal_cad` / `tuition_real_2023_cad` / `student_debt_nominal_cad` / `student_debt_real_2023_cad` | Metric |
+| `value` | number | (varies) | Value |
+| `unit` | string | `CAD` / `CAD_2023` | Unit |
+| `series_id` | string | `37-10-0160-01` / `37-10-0045-01` / `37-10-0036-01` | Source table |
+| `notes` | string | `stitched series` / `5-year interval` | Notes |
+
+### Primary sources, IDs, stitching logic, and download links
+
+Tuition requires two official tables:
+
+- Historical (archived) tuition table: **37-10-0160-01**, academic years 1972/1973–2006/2007. citeturn23view0  
+- Current tuition table: **37-10-0045-01**, academic years 2006/2007 onward (and includes documented corrections). citeturn22view1  
+
+Student debt:
+
+- Student debt from all sources: **37-10-0036-01**, five-year intervals (2000–2020 shown directly in table range). citeturn22view0  
+
+Download links:
+
+```text
+Tuition (current) full table download:
+https://www150.statcan.gc.ca/n1/tbl/csv/37100045-eng.zip
+
+Tuition (historical, archived) full table download:
+https://www150.statcan.gc.ca/n1/tbl/csv/37100160-eng.zip
+
+Student debt full table download:
+https://www150.statcan.gc.ca/n1/tbl/csv/37100036-eng.zip
+
+CPI annual average full table download (for 2023 base-year deflation):
+https://www150.statcan.gc.ca/n1/tbl/csv/18100005-eng.zip
+```
+
+The tuition “current” table explicitly indicates it replaces the older historical table; the overlap year 2006/2007 is your stitch point (choose one table as authoritative for the overlap and document the choice). citeturn22view1turn23view0
+
+Suggested citation lines:
+
+- Tuition: “Statistics Canada. Tables 37-10-0160-01 (archived) and 37-10-0045-01 (current), tuition fees by level of study. DOI: 10.25318/3710016001-eng; 10.25318/3710004501-eng.” citeturn23view0turn22view1  
+- Student debt: “Statistics Canada. Table 37-10-0036-01, Student debt from all sources (five-year intervals). DOI: 10.25318/3710003601-eng.” citeturn22view0  
+- CPI: “Statistics Canada. Table 18-10-0005-01, CPI annual average. DOI: 10.25318/1810000501-eng.” citeturn33view1  
+
+### Reproducible transformation steps and pseudo-code
+
+```text
+INPUTS
+- tuition_hist: 37-10-0160-01 (1972/73..2006/07)
+- tuition_curr: 37-10-0045-01 (2006/07..latest)
+- debt_5yr: 37-10-0036-01 (2000..2020 every 5 years)
+- cpi_y: 18-10-0005-01 (annual CPI, all-items, Canada)
+
+STEP 1: FILTER TO YOUR CORE SERIES
+- tuition fields:
+    geo = Canada
+    level = undergraduate (Canadian students, full-time) [document exact table filter]
+- debt fields:
+    geo/province = Canada (or keep province dimension for drilldown)
+    debt_source = all sources
+    level_of_study = bachelor/undergraduate (or your chosen consistent level)
+
+STEP 2: STANDARDIZE ACADEMIC YEAR
+- Parse academic year strings "1990 / 1991" → academic_year_start=1990
+- Keep academic_year_label for display
+
+STEP 3: STITCH TUITION SERIES
+- Combine tuition_hist and tuition_curr
+- For overlap year 2006/2007:
+    choose tuition_curr as authoritative (recommended because it’s the active program)
+    OR choose tuition_hist if you want historical continuity
+- Add column: tuition_stitch_source = "hist" or "curr"
+
+STEP 4: INFLATION ADJUSTMENT TO 2023 CAD
+- Use CPI_2023 as base.
+- For academic_year_start=y:
+    tuition_real_2023 = tuition_nominal * (CPI_2023 / CPI_y)
+    debt_real_2023 = debt_nominal * (CPI_2023 / CPI_y)
+
+STEP 5: OPTIONAL INDEXING FOR VISUALS
+- tuition_index_1990_100 = tuition_real_2023 / tuition_real_2023_at_1990 * 100
+- debt_index_2000_100 = debt_real_2023 / debt_real_2023_at_2000 * 100
+
+STEP 6: OUTPUT LONG/TIDY CSV
+- One row per (academic_year_start, geo, metric)
+- Keep missing years for debt as blank (best) rather than interpolating
+```
+
+### Data-quality note
+
+- Tuition series includes documented corrections in some academic years; if you reproduce or publish a stitched series, include a short “data revisions” note in your methodology panel. citeturn22view1  
+- Student debt table is **not annual**; it is five-year interval data (and therefore best visualized as discrete points or step changes, not a smooth line). citeturn22view0  
+- Academic-year tuition deflation uses annual CPI as an approximation; if you want higher fidelity, deflate using the average CPI across the two calendar years spanned by the academic year (e.g., mean of CPI_1990 and CPI_1991 for 1990/1991).
+
+### Suggested chart type and mock caption
+
+- **Chart type:**  
+  - Tuition: line (real 2023$) + index (1990=100) as toggle  
+  - Student debt: dot series (five-year points) with optional step line
+
+- **Mock caption:**  
+  “Tuition rose sharply in real terms since the early 1990s. At the same time, student debt at graduation remains a structural legacy cost that today’s young cohorts carry into housing and family-formation years.”
+
+### 10-row CSV preview snippet
+
+Because the official tuition and debt tables are distributed as full-table downloads (ZIP) and cannot be rendered inline here, the preview below is a **format-accurate template** showing the intended tidy layout. Use the pseudo-code above to populate values from the cited tables. citeturn22view1turn23view0turn22view0turn33view1turn14view1
+
+```csv
+academic_year_start,academic_year_label,geo,metric,value,unit,series_id,notes
+1990,1990/1991,Canada,tuition_nominal_cad,,CAD,37-10-0160-01,from historical table
+1990,1990/1991,Canada,tuition_real_2023_cad,,CAD_2023,37-10-0160-01,deflated using CPI
+1991,1991/1992,Canada,tuition_nominal_cad,,CAD,37-10-0160-01,from historical table
+1991,1991/1992,Canada,tuition_real_2023_cad,,CAD_2023,37-10-0160-01,deflated using CPI
+2000,2000/2001,Canada,student_debt_nominal_cad,,CAD,37-10-0036-01,5-year interval point
+2000,2000/2001,Canada,student_debt_real_2023_cad,,CAD_2023,37-10-0036-01,deflated using CPI
+2006,2006/2007,Canada,tuition_nominal_cad,,CAD,37-10-0045-01,stitch overlap (prefer current table)
+2006,2006/2007,Canada,tuition_real_2023_cad,,CAD_2023,37-10-0045-01,deflated using CPI
+2020,2020/2021,Canada,student_debt_nominal_cad,,CAD,37-10-0036-01,5-year interval point
+2020,2020/2021,Canada,student_debt_real_2023_cad,,CAD_2023,37-10-0036-01,deflated using CPI
+```
+
+## Shared reproducibility recipes
+
+### Inflation adjustment to 2023 dollars
+
+Use CPI annual average (all-items) so every money series in your project uses the same base-year conversion. citeturn33view1turn16search0
+
+```text
+Given:
+- CPI_y: CPI annual average for year y
+- CPI_2023: CPI annual average for 2023
+
+Deflator_y = CPI_2023 / CPI_y
+Real_2023 = Nominal_y * Deflator_y
+```
+
+If your denominator/numerator is academic-year (e.g., tuition 1990/1991), choose the academic-year start year’s CPI or the mean of the two years, and document the rule.
+
+### Cohort mapping and cohort buckets
+
+To turn age groups into generational buckets in a **same-age cross-year** chart:
+
+```text
+birth_year_min = year - age_max
+birth_year_max = year - age_min
+
+Cohorts (standard, document once in methodology):
+- Boomers: 1946–1964
+- Gen X: 1965–1980
+- Millennials: 1981–1996
+- Gen Z: 1997–2012
+
+Bucket:
+- younger = Millennials + Gen Z
+- older   = Boomers + Gen X
+- mixed   = overlap range crosses buckets
+```
+
+Use `mixed` sparingly (e.g., grey band), or split the row into fractional cohort shares if you want maximum precision.
+
+### Interpolation and aggregation rules
+
+- **Monthly → quarterly:** average (mean) is usually best for indices. citeturn33view0  
+- **Annual → quarterly:** carry-forward is preferable to interpolation unless you clearly label “interpolated.”  
+- **Five-year student-debt series:** avoid interpolation in the published chart; show points and annotate “five-year intervals.” citeturn22view0  
+
+## Gaps and limitations
+
+- **No single perfect “house price to household income” metro series** exists in official tables back to 1990 with quarterly frequency; the recommended workaround is (a) official affordability index for the national benchmark, plus (b) NHPI (metro) combined with a consistent income series and re-indexed gap measures. citeturn1view1turn33view0turn5view1  
+- **Student debt** is not annual in the main official series; treat it as structural “milestone” data points rather than a smooth trend line. citeturn22view0  
+- **Tuition** requires stitching archived and current tables; always note the stitch year and correction history in your methodology panel. citeturn22view1turn23view0  
+
+## Implementation checklist for interactive charts
+
+- Put the three output CSVs in a `data/derived/` folder and keep a `data/sources/README.md` that lists the exact table/series IDs, download links, and your transformation rules (inflation base year, stitch year, interpolation policy). citeturn14view1turn38search5  
+- For housing and wages, default the UI to **1990=100** indexing with a toggle for “show in original units” where appropriate.  
+- For debt (5-year points), use a chart style that visually signals sparseness: dots + lightly connected step line, with tooltip text “National Graduates Survey table—five-year intervals.” citeturn22view0  
+- Include a “What this chart does NOT show” disclosure per module (e.g., NHPI excludes resale; affordability index assumes typical mortgage terms; student debt is survey-based and periodic). citeturn1view1turn33view0turn22view0
