@@ -109,7 +109,7 @@ const Index = () => {
             <div key={slide.id}>
               <SlideSection slide={slide} index={index} />
 
-              {index === 1 && (
+              {slide.id === 'housing' && (
                 <DataTable
                   caption={homeownershipData.caption}
                   source={homeownershipData.source}
@@ -119,7 +119,7 @@ const Index = () => {
                 />
               )}
 
-              {index === 4 && (
+              {slide.id === 'wealth' && (
                 <DataTable
                   caption={netWorthData.caption}
                   source={netWorthData.source}
