@@ -95,7 +95,7 @@ const Index = () => {
         <div className="article-meta">
           <p className="article-section-label">Special Report</p>
           <h2 className="article-deck">
-            Across Canada, younger generations are entering adulthood facing housing prices far out of reach of their incomes, rising living costs, and higher student debt than previous cohorts. The data shows a structural divide—not a temporary blip.
+            For decades, Canada sold a familiar promise. Study hard. Find work. Rent your first place. Save up. Maybe buy a home. For a growing share of younger adults, that promise no longer holds.
           </h2>
           <div className="article-byline-row">
             <span className="article-byline">By The Research Desk</span>

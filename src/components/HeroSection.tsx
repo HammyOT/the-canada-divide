@@ -41,12 +41,20 @@ export function HeroSection({ title, id }: HeroSectionProps) {
           transition={{ duration: reducedMotion ? 0.1 : 0.8, delay: 0.1 }}
           className="hero-title"
         >
-          {title}
+          A Broken Deal:
         </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: reducedMotion ? 0 : 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: reducedMotion ? 0.1 : 0.75, delay: 0.2 }}
+          className="hero-subheading"
+        >
+          The Rise of Generational Inequality
+        </motion.p>
         <motion.p
           initial={{ opacity: 0, y: reducedMotion ? 0 : 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: reducedMotion ? 0.1 : 0.7, delay: 0.25 }}
+          transition={{ duration: reducedMotion ? 0.1 : 0.7, delay: 0.35 }}
           className="hero-subtitle"
         >
           Housing, wages, and wealth: how Canada's economic promise became conditional on when you were born.
