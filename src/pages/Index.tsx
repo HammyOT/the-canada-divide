@@ -29,8 +29,8 @@ const photoBreaks: Record<number, { src: string; alt: string; caption: string; c
   },
   3: {
     src: photoGroceries,
-    alt: 'Grocery store aisle with price tags',
-    caption: 'The cost of essentials has outpaced wages for much of the past decade.',
+    alt: 'Produce and grocery aisles inside a Walmart in Waterloo, Ontario',
+    caption: 'Waterloo, Ontario. The cost of groceries and daily essentials has risen faster than wages for much of the past decade, squeezing budgets that are already stretched by rent.',
     credit: 'Photo: Placeholder',
   },
   4: {
