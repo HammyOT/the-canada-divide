@@ -3,7 +3,7 @@ export function Footer() {
 
   return (
     <footer className="site-footer" role="contentinfo">
-      <span className="footer-brand">Generational Inequality</span>
+      <span className="footer-brand">Generational Inequality Project</span>
       <span className="footer-note">
         Research base: Statistics Canada, CMHC, Bank of Canada &bull; &copy; {currentYear}
       </span>

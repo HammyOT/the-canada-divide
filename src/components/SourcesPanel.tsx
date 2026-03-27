@@ -74,10 +74,6 @@ export function SourcesPanel() {
           <p style={bodyStyle}>{sourcesData.methodology.description}</p>
         </div>
 
-        <div style={dividerStyle}>
-          <p style={labelStyle}>Limitations</p>
-          <p style={bodyStyle}>{sourcesData.limitations.description}</p>
-        </div>
       </div>
     </section>
   );
