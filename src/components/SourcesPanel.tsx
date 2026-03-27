@@ -1,6 +1,30 @@
 import { useInView } from '@/hooks/useInView';
 import sourcesData from '@/content/sources.json';
 
+const labelStyle: React.CSSProperties = {
+  fontFamily: "'Inter', sans-serif",
+  fontSize: '0.68rem',
+  fontWeight: 700,
+  textTransform: 'uppercase',
+  letterSpacing: '0.1em',
+  color: 'hsl(220 15% 38%)',
+  marginBottom: '0.6rem',
+};
+
+const bodyStyle: React.CSSProperties = {
+  fontFamily: "'Source Serif 4', Georgia, serif",
+  fontSize: '0.85rem',
+  color: 'hsl(220 25% 12%)',
+  lineHeight: 1.65,
+  whiteSpace: 'pre-line',
+};
+
+const dividerStyle: React.CSSProperties = {
+  borderTop: '1px solid hsl(30 12% 82%)',
+  paddingTop: '1.2rem',
+  marginTop: '1.2rem',
+};
+
 export function SourcesPanel() {
   const [ref, isInView] = useInView<HTMLElement>({ threshold: 0.1 });
 
@@ -22,9 +46,7 @@ export function SourcesPanel() {
 
         {Object.entries(groupedSources).map(([category, sources]) => (
           <div key={category} style={{ marginBottom: '1.4rem' }}>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.68rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'hsl(220 15% 38%)', marginBottom: '0.6rem' }}>
-              {category}
-            </p>
+            <p style={labelStyle}>{category}</p>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {sources.map((source) => (
                 <li key={source.id} style={{ marginBottom: '0.45rem' }}>
@@ -47,13 +69,14 @@ export function SourcesPanel() {
           </div>
         ))}
 
-        <div style={{ borderTop: '1px solid hsl(30 12% 82%)', paddingTop: '1.2rem', marginTop: '1.2rem' }}>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.68rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'hsl(220 15% 38%)', marginBottom: '0.5rem' }}>
-            Methodology
-          </p>
-          <p style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '0.85rem', color: 'hsl(220 25% 12%)', lineHeight: 1.6 }}>
-            {sourcesData.methodology.description}
-          </p>
+        <div style={dividerStyle}>
+          <p style={labelStyle}>Methodology</p>
+          <p style={bodyStyle}>{sourcesData.methodology.description}</p>
+        </div>
+
+        <div style={dividerStyle}>
+          <p style={labelStyle}>Limitations</p>
+          <p style={bodyStyle}>{sourcesData.limitations.description}</p>
         </div>
       </div>
     </section>

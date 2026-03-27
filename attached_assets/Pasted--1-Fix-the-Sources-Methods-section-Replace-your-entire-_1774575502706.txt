@@ -1,0 +1,69 @@
+✅ 1. Fix the “Sources & Methods” section
+Replace your entire current section with this:
+Writing
+Sources & Methods
+This project draws on publicly available data from Statistics Canada, the Canada Mortgage and Housing Corporation (CMHC), and the Bank of Canada. All figures are presented in inflation-adjusted (constant) dollars where indicated to allow for comparisons over time.
+
+Housing
+Statistics Canada — National Household Survey (2011) and Census (2016, 2021)
+CMHC — Housing Supply Report (2022; updated 2025 estimates)
+
+Prices
+Statistics Canada — Consumer Price Index (CPI), table 18-10-0004-01
+
+Wages
+Statistics Canada — Labour Force Survey, real median hourly wages
+
+Education
+Statistics Canada — Tuition fees for degree programs, table 37-10-0003-01
+National comparisons are presented in constant dollars to reflect real changes over time
+
+Wealth
+Statistics Canada — Survey of Financial Security (1999–2023)
+
+Policy Context
+Bank of Canada — Housing affordability indicators and policy rate data
+CMHC — Estimates of housing supply required to restore affordability
+
+Methodology
+
+Where possible, comparisons are made between Canadians at the same age across time rather than between generations. This approach helps isolate structural economic changes from normal life-cycle effects, since wealth and homeownership tend to rise with age.
+
+All long-run comparisons are inflation-adjusted to constant dollars. Calculations such as hours of work required to pay tuition are author calculations based on publicly reported figures.
+
+Limitations
+
+National averages may mask significant regional variation, particularly in housing markets such as Toronto and Vancouver. Changes in survey methods over time may also affect comparability across years. Generational labels are used as a narrative tool, but underlying analysis is based on age cohorts.
+✅ 3. Fix the weak/unsupported lines
+🔧 A) Grocery sentence (replace it)
+Find this:
+“The cost of groceries and daily essentials has risen faster than wages for much of the past decade…”
+Replace with:
+Writing
+The cost of essentials has risen alongside broader inflation, while wage growth has remained comparatively modest. For many households, this has meant that even as earnings increase in real terms, everyday expenses continue to absorb a large share of income.
+👉 Why this works:
+Still accurate
+Doesn’t overclaim
+Matches your CPI vs wage framing
+🔧 B) Waterloo caption (replace it)
+Find this:
+“Rental apartments near university campuses have become some of the most expensive in Canada…”
+Replace with:
+Writing
+Waterloo, Ontario. Rental apartments near university campuses have seen sharp price increases in recent years — a pressure felt first by students, and then by graduates trying to stay.
+👉 Why this works:
+Keeps your point
+Removes unverified national ranking claim
+🔧 C) Tuition (small tweak for safety)
+Find this:
+“roughly $2,340 in equivalent 1981 terms”
+Replace with:
+Writing
+Long-run comparisons suggest annual undergraduate tuition was roughly $2,340 in inflation-adjusted terms around 1981.
+👉 Adds proper hedging + clarity
+🔧 D) 426 hours (add attribution)
+Find this:
+“would require about 426 hours of work”
+Replace with:
+Writing
+would require about 426 hours of work (author calculation based on reported tuition and the scheduled federal minimum wage).

@@ -24,13 +24,13 @@ const photoBreaks: Record<number, { src: string; alt: string; caption: string; c
   1: {
     src: photoHousing,
     alt: 'A student outside apartment buildings in Waterloo, Ontario',
-    caption: 'Waterloo, Ontario. Rental apartments near university campuses have become some of the most expensive in Canada — a pressure felt first by students, and then by graduates trying to stay.',
+    caption: 'Waterloo, Ontario. Rental apartments near university campuses have seen sharp price increases in recent years — a pressure felt first by students, and then by graduates trying to stay.',
     credit: 'Photo: Hamza Ahmadi',
   },
   3: {
     src: photoGroceries,
     alt: 'Produce and grocery aisles inside a Walmart in Waterloo, Ontario',
-    caption: 'Waterloo, Ontario. The cost of groceries and daily essentials has risen faster than wages for much of the past decade, squeezing budgets that are already stretched by rent.',
+    caption: 'Waterloo, Ontario. The cost of essentials has risen alongside broader inflation, while wage growth has remained comparatively modest. For many households, this has meant that even as earnings increase in real terms, everyday expenses continue to absorb a large share of income.',
     credit: 'Photo: Hamza Ahmadi',
   },
   4: {
