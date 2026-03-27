@@ -98,7 +98,7 @@ const Index = () => {
             For decades, Canada sold a familiar promise. Study hard. Find work. Rent your first place. Save up. Maybe buy a home. For a growing share of younger adults, that promise no longer holds.
           </h2>
           <div className="article-byline-row">
-            <span className="article-byline">By The Research Desk</span>
+            <span className="article-byline">Hamza A</span>
             <span className="article-date">March 2026</span>
           </div>
           <div className="article-rule" />
