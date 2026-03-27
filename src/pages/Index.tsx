@@ -11,7 +11,7 @@ import { DataTable } from '@/components/DataTable';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import slidesDataRaw from '@/content/slides.json';
 
-import photoHousing from '@/assets/photo-housing.png';
+import photoHousing from '@/assets/photo-housing.jpg';
 import photoGroceries from '@/assets/photo-groceries.jpg';
 import photoCampus from '@/assets/photo-campus.jpg';
 
