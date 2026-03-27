@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="site-footer" role="contentinfo">
       <span className="footer-brand">Generational Inequality Project</span>
       <span className="footer-note">
-        Research base: Statistics Canada, CMHC, Bank of Canada &bull; &copy; {currentYear}
+        Hamza Ahmadi &bull; {currentYear}
       </span>
     </footer>
   );
