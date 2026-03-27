@@ -44,7 +44,7 @@ export function NewsNav({ items, activeIndex, onNavigate }: NewsNavProps) {
                   onHero ? 'text-white' : 'text-ink'
                 }`}
               >
-                Generational Inequality
+                Generational Inequality Project
               </span>
             </div>
 
