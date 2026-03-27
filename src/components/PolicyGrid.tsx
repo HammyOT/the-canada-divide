@@ -24,8 +24,7 @@ export function PolicyGrid({ options }: PolicyGridProps) {
       <div className="policy-section">
         <h2 id="policy-title" className="policy-heading">Policy Options</h2>
         <p className="policy-subheading">
-          Every lever has costs, politics, and unintended consequences. A rigorous article presents at
-          least two competing causal frames—and shows where they agree.
+          Every lever has costs, politics, and unintended consequences.
         </p>
 
         <div className="policy-grid">
