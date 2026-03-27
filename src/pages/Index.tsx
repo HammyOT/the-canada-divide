@@ -23,8 +23,8 @@ const slidesData = {
 const photoBreaks: Record<number, { src: string; alt: string; caption: string; credit: string }> = {
   1: {
     src: photoHousing,
-    alt: 'Aerial view of a vast suburban housing development in Canada, rows of identical homes stretching to the horizon',
-    caption: 'Row after row of houses in a Canadian suburb. For many younger adults, entering this market at all has become the central economic challenge of their generation.',
+    alt: 'A student outside apartment buildings in Waterloo, Ontario',
+    caption: 'Waterloo, Ontario. Rental apartments near university campuses have become some of the most expensive in Canada — a pressure felt first by students, and then by graduates trying to stay.',
     credit: 'Photo: Placeholder',
   },
   3: {
