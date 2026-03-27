@@ -25,19 +25,19 @@ const photoBreaks: Record<number, { src: string; alt: string; caption: string; c
     src: photoHousing,
     alt: 'A student outside apartment buildings in Waterloo, Ontario',
     caption: 'Waterloo, Ontario. Rental apartments near university campuses have become some of the most expensive in Canada — a pressure felt first by students, and then by graduates trying to stay.',
-    credit: 'Photo: Placeholder',
+    credit: 'Photo: Hamza Ahmadi',
   },
   3: {
     src: photoGroceries,
     alt: 'Produce and grocery aisles inside a Walmart in Waterloo, Ontario',
     caption: 'Waterloo, Ontario. The cost of groceries and daily essentials has risen faster than wages for much of the past decade, squeezing budgets that are already stretched by rent.',
-    credit: 'Photo: Placeholder',
+    credit: 'Photo: Hamza Ahmadi',
   },
   4: {
     src: photoCampus,
-    alt: 'University students walking across campus in autumn',
-    caption: 'For many graduates, adulthood begins with five figures of debt.',
-    credit: 'Photo: Placeholder',
+    alt: 'Students studying on campus at the University of Waterloo',
+    caption: 'University of Waterloo. Canadian students now graduate with more debt than any previous generation — and enter a job market where wages have not kept pace with the costs they face.',
+    credit: 'Photo: Hamza Ahmadi',
   },
 };
 
