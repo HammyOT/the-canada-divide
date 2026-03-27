@@ -50,14 +50,9 @@ export function SourcesPanel() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
               {sources.map((source) => (
                 <li key={source.id} style={{ marginBottom: '0.45rem' }}>
-                  <a
-                    href={source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '0.85rem', color: 'hsl(220 25% 12%)', textDecoration: 'underline', textUnderlineOffset: '2px' }}
-                  >
+                  <span style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '0.85rem', color: 'hsl(220 25% 12%)' }}>
                     {source.label}
-                  </a>
+                  </span>
                   {source.note && (
                     <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.68rem', color: 'hsl(220 10% 45%)', marginLeft: '0.5rem' }}>
                       — {source.note}
