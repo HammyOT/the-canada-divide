@@ -11,7 +11,7 @@ import { DataTable } from '@/components/DataTable';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
 import slidesDataRaw from '@/content/slides.json';
 
-import photoHousing from '@/assets/photo-housing.jpg';
+import photoHousing from '@/assets/photo-housing.png';
 import photoGroceries from '@/assets/photo-groceries.jpg';
 import photoCampus from '@/assets/photo-campus.jpg';
 
@@ -23,8 +23,8 @@ const slidesData = {
 const photoBreaks: Record<number, { src: string; alt: string; caption: string; credit: string }> = {
   1: {
     src: photoHousing,
-    alt: 'Aerial view of suburban housing development stretching to the horizon',
-    caption: 'Suburban sprawl outside a major Canadian city. For many, homeownership now depends on when — not whether — you entered the market.',
+    alt: 'Aerial view of a vast suburban housing development in Canada, rows of identical homes stretching to the horizon',
+    caption: 'Row after row of houses in a Canadian suburb. For many younger adults, entering this market at all has become the central economic challenge of their generation.',
     credit: 'Photo: Placeholder',
   },
   3: {
