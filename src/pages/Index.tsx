@@ -35,8 +35,8 @@ const photoBreaks: Record<number, { src: string; alt: string; caption: string; c
   },
   4: {
     src: photoCampus,
-    alt: 'Students studying on campus at the University of Waterloo',
-    caption: 'University of Waterloo. Canadian students now graduate with more debt than any previous generation — and enter a job market where wages have not kept pace with the costs they face.',
+    alt: 'Students with backpacks walking through a hallway at the University of Waterloo',
+    caption: 'University of Waterloo. Between tuition, rent, and groceries, students today carry a financial load that previous generations did not — and the debt follows them long after graduation.',
     credit: 'Photo: Hamza Ahmadi',
   },
 };
