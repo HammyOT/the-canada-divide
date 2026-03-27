@@ -42,7 +42,7 @@
       "statLabel": "Real median hourly wage growth, 1981–2024",
       "statValue": "+20%",
       "statNote": "Full-time jobs: +24%. Part-time jobs: +6%. Source: Statistics Canada Labour Force Survey",
-      "body": "Work, meanwhile, tells a more complicated story than social media slogans suggest.\n\nStatistics Canada reports that from 1981 to 2024, median real hourly wages grew 20 percent overall, with stronger gains in full-time jobs than in part-time work. Wages rose, but that does not mean younger workers are imagining the squeeze.\n\nA person can earn more in inflation-adjusted terms than someone decades earlier and still be worse off in the places that matter most. If rent absorbs more income, if buying a home takes far longer, and if adult life begins under heavier education costs, modest wage gains do not restore the old bargain. They only make a harsher economy slightly more survivable.",
+      "body": "Housing may be the clearest driver, but it is not the only one.\n\nWork tells a more complicated story than social media slogans suggest. Statistics Canada reports that from 1981 to 2024, median real hourly wages grew 20 percent overall, with stronger gains in full-time jobs than in part-time work. Wages rose, but that does not mean younger workers are imagining the squeeze.\n\nA person can earn more in inflation-adjusted terms than someone decades earlier and still be worse off in the places that matter most. If rent absorbs more income, if buying a home takes far longer, and if adult life begins under heavier education costs, modest wage gains do not restore the old bargain. They only make a harsher economy slightly more survivable.",
       "question": "Is this a temporary squeeze — or the new normal?",
       "backgroundType": "image",
       "backgroundImage": "/images/grocery.jpg",
@@ -53,8 +53,8 @@
       "title": "The Starting Line Moved",
       "statLabel": "Average undergrad tuition (2025/26 projected)",
       "statValue": "$7,734",
-      "statNote": "In June 2025 constant dollars. Source: Statistics Canada Table 37-10-0045-01",
-      "body": "Statistics Canada reported that average tuition for Canadian undergraduate students is expected to reach $7,734 in the 2025 to 2026 academic year, in June 2025 constant dollars. That is far above the roughly $2,340 inflation-adjusted benchmark often used for 1981 in long-run comparisons.\n\nPut that beside wages at the floor of the labour market. The federal minimum wage is scheduled to rise to $18.15 an hour on April 1, 2026. At that rate, average annual undergraduate tuition alone would require about 426 hours of work — before rent, groceries, books, or transit are even counted.\n\nThat is one of the clearest ways to show the shift. The problem is not only that tuition is high. It is that the amount of time needed to pay for it has grown while other essentials have become harder to afford at the same time.",
+      "statNote": "In June 2025 constant dollars. Roughly $2,340 in equivalent 1981 terms. Source: Statistics Canada",
+      "body": "One way to see the shift is to compare what basic milestones cost relative to entry-level work. Long-run comparisons often place annual undergraduate tuition at roughly $2,340 in inflation-adjusted terms around 1981. Statistics Canada now expects average undergraduate tuition in Canada to reach $7,734 in the 2025 to 2026 academic year, in constant dollars. Over the same period, the federal minimum wage did not rise nearly enough to close that gap. At the scheduled federal minimum wage of $18.15 an hour on April 1, 2026, average annual undergraduate tuition alone would require about 426 hours of work — before rent, groceries, books, or transit are even counted.\n\nThat is one of the clearest ways to show what has changed. The issue is not only that tuition is high. It is that the amount of time needed to pay for it has grown while other essentials have become harder to afford at the same time.\n\nEducation still matters. A degree is still widely presented as the route to mobility and stability. But the price of getting started has climbed, and the security attached to that investment no longer feels as certain as it once did. For many younger Canadians, the transition into adulthood now begins with higher costs, weaker purchasing power, and a longer road to the same markers of security older generations reached earlier.",
       "question": "What happens when the first step costs more?",
       "backgroundType": "gradient",
       "backgroundImage": null,
@@ -78,7 +78,7 @@
       "statLabel": "Annual housing starts needed (CMHC estimate)",
       "statValue": "430,000–480,000",
       "statNote": "Nearly double the current pace, to restore 2019 affordability levels. Source: CMHC 2022; updated 2025",
-      "body": "It is tempting to look for one obvious cause or one group to blame. But problems this large are rarely that simple. Canada's generational squeeze did not emerge from a single decision, a single law, or a single demographic change. It built up over time as housing supply lagged, homes became investment assets, wages struggled to keep pace with key costs, and public policy often protected existing asset holders more than new entrants.\n\nPart of the answer is supply. Canada did not build enough housing in the places where demand grew fastest. Zoning limits, approval delays, infrastructure bottlenecks, and weak construction capacity all helped leave too few homes chasing too many buyers and renters.\n\nPopulation growth can increase pressure in already tight housing markets, but it does not by itself explain why governments allowed shortages, weak rental protections, and speculative housing dynamics to build for so long. Blaming immigrants alone for a decades-long affordability problem confuses an added source of demand with the deeper policy and market failures that made the system so brittle in the first place.\n\nBut supply is only part of the story. Housing also became a powerful investment asset. Cheap credit, investor demand, and the treatment of homes as appreciating financial vehicles helped push prices beyond what wages alone could support.\n\nThe squeeze also reflects the weakening of supports that once made early adult life easier to navigate. More affordable education, stronger public supports, and more stable entry-level work once made it easier for younger adults to establish themselves without relying as heavily on family wealth or asset appreciation. As those cushions weakened, the risks of adulthood became more individualized.\n\nThese forces differ, but they point to the same conclusion: the current divide is not a natural law. It is the product of political and economic choices.\n\nThat is why the frustration surrounding generational inequality is not just cultural bitterness or online complaining. It reflects a deeper fear that the rules of economic life have changed. Work still matters, but ownership matters more. Credentials still matter, but inheritance matters too. Adulthood is increasingly shaped not just by what you earn, but by when you enter the market, what your family can help with, and whether you can hold on long enough to catch up.\n\nIf younger Canadians are working, studying, and saving while falling further behind on the most basic measures of security, then this is not just a story about personal budgeting or unrealistic expectations. It is a story about a country where the old promise has weakened.\n\nFor many young adults, the result is simple and harsh: the milestones that once defined a stable adult life now take longer, cost more, and increasingly depend on help not everyone has.",
+      "body": "It is tempting to look for one obvious cause or one group to blame. But problems this large are rarely that simple. Canada's generational squeeze did not emerge from a single decision, a single law, or a single demographic change. It built up over time as housing supply lagged, homes became investment assets, wages struggled to keep pace with key costs, and public policy often protected existing asset holders more than new entrants.\n\nPart of the answer is supply. Canada did not build enough housing in the places where demand grew fastest. Zoning limits, approval delays, infrastructure bottlenecks, and weak construction capacity all helped leave too few homes chasing too many buyers and renters.\n\nPopulation growth can increase pressure in already tight housing markets, but it does not by itself explain why governments allowed shortages, weak rental protections, and speculative housing dynamics to build for so long. Blaming immigrants alone for a decades-long affordability problem confuses an added source of demand with the deeper policy and market failures that made the system so brittle in the first place.\n\nBut supply is only part of the story. Housing also became a powerful investment asset. Cheap credit, investor demand, and the treatment of homes as appreciating financial vehicles helped push prices beyond what wages alone could support. In that system, those who already owned assets were far better positioned than those still trying to enter the market.\n\nThe squeeze also reflects the weakening of supports that once made early adult life easier to navigate. More affordable education, stronger public supports, and more stable entry-level work once made it easier for younger adults to establish themselves without relying as heavily on family wealth or asset appreciation. As those cushions weakened, the risks of adulthood became more individualized.\n\nThese forces differ, but they point to the same conclusion: the current divide is not a natural law. It is the product of political and economic choices.\n\nThat is why the frustration surrounding generational inequality is not just cultural bitterness or online complaining. It reflects a deeper fear that the rules of economic life have changed. Work still matters, but ownership matters more. Credentials still matter, but inheritance matters too. Adulthood is increasingly shaped not just by what you earn, but by when you enter the market, what your family can help with, and whether you can hold on long enough to catch up.\n\nThe danger is not only economic. It is political.\n\nWhen a society cannot explain its own economic pressures clearly, it becomes easier to blame the wrong people. Immigrants, environmental rules, younger people's spending habits, or older generations as a whole can all become convenient targets. But scapegoats do not explain why homes were allowed to function as wealth machines, why supply remained constrained, why rents rose so sharply, or why the first rungs of adult life became so expensive. Simpler stories may feel satisfying. They are also less true.\n\nNone of the solutions on their own will restore the old promise. Together, though, they point toward a different kind of response: one that treats generational inequality not as a culture-war talking point, but as a policy problem shaped by choices governments can still change.\n\nIf younger Canadians are working, studying, and saving while falling further behind on the most basic measures of security, then this is not just a story about personal budgeting or unrealistic expectations. It is a story about a country where the old promise has weakened. For many young adults, the result is simple and harsh: the milestones that once defined a stable adult life now take longer, cost more, and increasingly depend on help not everyone has.",
       "question": "What kind of Canada comes next?",
       "backgroundType": "gradient",
       "backgroundImage": null,
@@ -123,39 +123,39 @@
   "policyOptions": [
     {
       "id": "supply",
-      "title": "Accelerate Housing Supply",
-      "description": "Zoning reform, faster approvals, and infrastructure financing to enable significantly more construction. CMHC estimates Canada needs 430,000–480,000 annual starts over the next decade — nearly double the current pace — to return to 2019 affordability levels.",
-      "tradeoff": "Long lags between policy change and new supply; construction capacity constraints; local political resistance; geographic mismatch if supply occurs where demand is weakest."
+      "title": "Accelerate Market Supply",
+      "description": "Reforming zoning, approvals, and infrastructure finance to increase the number of homes being built. CMHC work suggests an additional 3.5 million units are needed by 2030 to restore affordability.",
+      "tradeoff": "Directly addresses the supply gap but faces long lags, construction capacity limits, and local political resistance."
     },
     {
       "id": "non-market",
-      "title": "Scale Deeply Affordable Housing",
-      "description": "Coordinated multi-level government investment in non-market and deeply affordable housing, targeting the households most rent-burdened. This segment is systematically under-targeted by market-rate supply increases alone.",
-      "tradeoff": "Requires sustained public funding and delivery capacity; can be slow without ready land and building pipelines."
+      "title": "Scale Non-Market Housing",
+      "description": "Investing in deeply affordable or non-market housing targets those with the highest rent burdens — a segment systematically under-targeted by market-rate supply increases alone.",
+      "tradeoff": "Helps those most vulnerable to rent pressure, though it requires sustained public funding and long-term delivery capacity."
     },
     {
       "id": "anti-financialization",
-      "title": "Address Investor Demand",
-      "description": "Data collection, taxes, and rules targeting investor-owned residential properties. Statistics Canada reports that in dense condo tracts, roughly half of condominiums were rented by investors in 2020–2021, raising questions about how financialization affects availability and prices.",
-      "tradeoff": "Design complexity; may reduce rental supply if bluntly applied; enforcement and data challenges."
+      "title": "Anti-Financialization Tools",
+      "description": "Combining supply increases with data collection, taxes, and rules on investor activity to limit the treatment of housing as a speculative asset. Statistics Canada notes heavy investor activity in markets such as downtown condos.",
+      "tradeoff": "Can reduce the amplification of price increases but carries design complexity and risks of unintended rental supply effects."
     },
     {
       "id": "demand-subsidies",
-      "title": "Caution on Demand-Side Purchase Subsidies",
-      "description": "The Bank of Canada has warned that purchase subsidies risk inflating prices in supply-constrained markets. The First Home Savings Account supports first-time buyers' savings, but broad buyer subsidies without matching supply risk benefiting sellers more than buyers.",
-      "tradeoff": "Politically difficult; doesn't directly help liquidity-constrained buyers; may add to price pressure in hot markets."
+      "title": "Avoid Demand-Side Purchase Subsidies",
+      "description": "Broad purchase subsidies risk simply bidding up prices in supply-constrained markets. Support for first-time buyers' savings is more targeted, but should not outpace supply-side reform.",
+      "tradeoff": "Politically difficult to resist; doesn't directly help liquidity-constrained buyers; broad subsidies may benefit sellers more than buyers."
     },
     {
       "id": "income-supports",
-      "title": "Income and Job Quality Supports",
-      "description": "Wage policy, job quality initiatives, and supports targeting involuntary part-time work and youth underemployment. Addresses the affordability gap from the income side, and helps both renters and aspiring owners.",
-      "tradeoff": "Wage growth alone is unlikely to catch up to asset price growth already accumulated; inflation interaction; sectoral and regional differences."
+      "title": "Strengthen Income and Job Quality",
+      "description": "Improving the wage and underemployment channel improves affordability for both renters and potential owners. Addresses \"youth-cession\" dynamics — elevated youth unemployment relative to other age groups.",
+      "tradeoff": "Wage growth alone may struggle to keep pace with rising asset prices already accumulated over decades."
     },
     {
       "id": "education-costs",
-      "title": "Reduce Education Cost Growth and Debt Burden",
-      "description": "Building on the April 2023 federal interest elimination on Canada Student Loans, further reforms could reduce principal burdens or expand grants — improving household balance sheets and early savings capacity.",
-      "tradeoff": "Does not solve the housing supply gap; tuition is only one part of total student cost — living costs are rising too."
+      "title": "Reduce Education Costs and Debt",
+      "description": "Limiting tuition growth and reducing student debt repayment burdens improves household cash flow early in adulthood. The federal government permanently eliminated interest on Canada Student Loans as of April 1, 2023.",
+      "tradeoff": "Improves balance sheets for graduates, but does not solve broader housing supply issues or offset housing inflation on its own."
     }
   ]
 }
