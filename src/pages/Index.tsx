@@ -99,7 +99,7 @@ const Index = () => {
           </h2>
           <div className="article-byline-row">
             <span className="article-byline">By The Research Desk</span>
-            <span className="article-date">Updated March 2026</span>
+            <span className="article-date">March 2026</span>
           </div>
           <div className="article-rule" />
         </div>
